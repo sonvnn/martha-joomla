@@ -1,0 +1,15 @@
+// Astroid Social Icon Default
+@import "../../../../../libraries/jollyany/framework/scss/jollyany/modules/astroid-social-icons";
+.astroid-social-icons {
+  >li {
+    border: none;
+    min-width: inherit;
+    margin-right: 1.5rem;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+.text-center .astroid-social-icons {
+  justify-content: center;
+}

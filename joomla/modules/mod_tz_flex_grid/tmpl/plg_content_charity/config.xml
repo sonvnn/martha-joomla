@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fields name="params">
+        <fieldset name="basic">
+            <field type="spacer" name="spacer_charity_addon_hr" hr="true"/>
+            <field type="radio" name="show_donate"
+                   default="1" class="btn-group"
+                   label="JGLOBAL_SHOW_DONATE_LABEL">
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field name="show_dnted" type="radio" default="1" class="btn-group" label="JGLOBAL_SHOW_DONATED_LABEL" >
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field name="show_gldn" type="radio" default="1" class="btn-group" label="JGLOBAL_SHOW_GOAL_DONATE_LABEL">
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+        </fieldset>        ​
+    </fields>
+</form>

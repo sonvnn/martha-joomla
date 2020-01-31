@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fields name="params">
+        <fieldset name="basic">
+            <field type="radio" name="show_comment_count"
+                   default="1" class="btn-group"
+                   label="PLG_CONTENT_COMMENT_SHOW_COMMENT_COUNT_LABEL"
+                   description="PLG_CONTENT_COMMENT_SHOW_COMMENT_COUT_DESC">
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>​
+        </fieldset>
+    </fields>
+</form>

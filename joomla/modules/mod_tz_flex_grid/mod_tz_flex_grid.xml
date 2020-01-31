@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="module" client="site" method="upgrade">
+    <name>TZ Flex Grid</name>
+    <author>Sonny</author>
+    <creationDate>November 2019</creationDate>
+    <copyright>Copyright (C) 2011-2019 TZ Portfolio.com. All rights reserved.</copyright>
+    <license>GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html</license>
+    <authorEmail>support@templaza.com</authorEmail>
+    <authorUrl>www.tzportfolio.com/</authorUrl>
+    <version>1.0.3</version>
+    <description>MOD_TZ_FLEX_GRID_XML_DESCRIPTION</description>
+    <files>
+        <filename module="mod_tz_flex_grid">mod_tz_flex_grid.php</filename>
+        <folder>css</folder>
+        <folder>js</folder>
+        <folder>tmpl</folder>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <filename>mod_tz_flex_grid.xml</filename>
+    </files>
+    <languages folder="languages">
+        <language tag="en-GB">en-GB/en-GB.mod_tz_flex_grid.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_tz_flex_grid.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="administrator/components/com_tz_portfolio_plus/models/fields">
+                <field type="tzcategory" name="catid"
+                       multiple="true"
+                       label="JCATEGORY">
+                    <option value="">JOPTION_ALL_CATEGORIES</option>
+                </field>
+                <field type="tzmediatypes" name="media_types"
+                       multiple="true"
+                       label="MOD_TZ_FLEX_GRID_MEDIA_TYPES_LABEL">
+                    <option value="">MOD_TZ_FLEX_GRID_ALL_MEDIA_TYPES</option>
+                    <option value="none">MOD_TZ_FLEX_GRID_NO_MEDIA</option>
+                </field>
+                <field type="radio" name="show_filter"
+                       class="btn-group switcher" default="1"
+                       label="MOD_TZ_FLEX_GRID_PORTFOLIO_SHOW_FILTER_LABEL">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="list" name="tz_filter_type"
+                       default="categories"
+                       showon="show_filter:1"
+                       label="MOD_TZ_FLEX_GRID_FILTER_TYPE">
+                    <option value="tags">MOD_TZ_FLEX_GRID_TAGS</option>
+                    <option value="categories">MOD_TZ_FLEX_GRID_CATEGORIES</option>
+                </field>
+                <field type="number" name="article_limit"
+                       default="5"
+                       label="MOD_TZ_FLEX_GRID_ARTICLE_LIMIT_LABEL"
+                       description="MOD_TZ_FLEX_GRID_ARTICLE_LIMIT_DESC"/>
+                <field type="list" name="orderby_sec"
+                       default="rdate"
+                       label="JGLOBAL_ARTICLE_ORDER_LABEL"
+                       description="JGLOBAL_ARTICLE_ORDER_DESC">
+                    <option value="rdate">JGLOBAL_MOST_RECENT_FIRST</option>
+                    <option value="date">JGLOBAL_OLDEST_FIRST</option>
+                    <option value="alpha">JGLOBAL_TITLE_ALPHABETICAL</option>
+                    <option value="ralpha">JGLOBAL_TITLE_REVERSE_ALPHABETICAL</option>
+                    <option value="author">JGLOBAL_AUTHOR_ALPHABETICAL</option>
+                    <option value="rauthor">JGLOBAL_AUTHOR_REVERSE_ALPHABETICAL</option>
+                    <option value="hits">JGLOBAL_MOST_HITS</option>
+                    <option value="rhits">JGLOBAL_LEAST_HITS</option>
+                    <option value="order">JGLOBAL_ARTICLE_MANAGER_ORDER</option>
+                </field>
+                <field type="list" name="flex_grid_gallery_type"
+                       default="masonry"
+                       label="MOD_TZ_FLEX_GRID_GALLERY_TYPE_LABEL">
+                    <option value="grid">MOD_TZ_FLEX_GRID_GALLERY_GRID</option>
+                    <option value="vertical_masonry">MOD_TZ_FLEX_GRID_GALLERY_MASONRY</option>
+                    <option value="horizontal_masonry">MOD_TZ_FLEX_GRID_GALLERY_HORIZONTAL_MASONRY</option>
+                </field>
+                <field showon="flex_grid_gallery_type:grid" type="list" name="flex_grid_style"
+                       default="1"
+                       label="MOD_TZ_FLEX_GRID_STYLE_LABEL">
+                    <option value="1">MOD_TZ_FLEX_GRID_STYLE1</option>
+                    <option value="2">MOD_TZ_FLEX_GRID_STYLE2</option>
+                    <option value="3">MOD_TZ_FLEX_GRID_STYLE3</option>
+                    <option value="4">MOD_TZ_FLEX_GRID_STYLE4</option>
+                    <option value="5">MOD_TZ_FLEX_GRID_STYLE5</option>
+                </field>
+                <field showon="flex_grid_gallery_type:grid" type="text" name="flex_grid_width"
+                       default="400"
+                       label="MOD_TZ_FLEX_GRID_GALLERY_GRID_WIDTH_LABEL"
+                       description="MOD_TZ_FLEX_GRID_GALLERY_GRID_WIDTH_DESC" />
+                <field showon="flex_grid_gallery_type:grid[OR]flex_grid_gallery_type:grid_ziczac" type="text" name="flex_grid_height"
+                       default="250"
+                       label="MOD_TZ_FLEX_GRID_GALLERY_GRID_HEIGHT_LABEL"
+                       description="MOD_TZ_FLEX_GRID_GALLERY_GRID_HEIGHT_DESC" />
+                <field showon="flex_grid_gallery_type:vertical_masonry" type="text" name="flex_vertical_masonry_min_columns"
+                       default="3"
+                       label="MOD_TZ_FLEX_VERTICAL_MASONRY_MIN_COLS_LABEL"
+                       description="MOD_TZ_FLEX_VERTICAL_MASONRY_MIN_COLS_DESC" />
+                <field showon="flex_grid_gallery_type:vertical_masonry" type="text" name="flex_vertical_masonry_gallery_height"
+                       default="1000"
+                       label="MOD_TZ_FLEX_VERTICAL_MASONRY_GALLERY_LABEL"
+                       description="MOD_TZ_FLEX_VERTICAL_MASONRY_GALLERY_DESC" />
+                <field showon="flex_grid_gallery_type:horizontal_masonry" type="text" name="flex_horizontal_masonry_grid_height"
+                       default="250"
+                       label="MOD_TZ_FLEX_HORIZONTAL_MASONRY_GRID_LABEL"
+                       description="MOD_TZ_FLEX_HORIZONTAL_MASONRY_GRID_DESC" />
+                <field type="list" name="flex_grid_gallery_hover_effect"
+                       default="default"
+                       label="MOD_TZ_FLEX_GRID_HOVER_EFFECT_LABEL">
+                    <option value="default">MOD_TZ_FLEX_GRID_HOVER_EFFECT_DEFAULT</option>
+                    <option value="arum">MOD_TZ_FLEX_GRID_HOVER_EFFECT_ARUM</option>
+                </field>
+                <field type="radio" name="enable_bootstrap"
+                       default="0" class="switcher btn-group"
+                       label="MOD_TZ_FLEX_ENABLE_BOOTSTRAP_LIBRARY_LABEL">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="list" name="bootstrapversion"
+                       default="4"
+                       showon="enable_bootstrap:1"
+                       label="MOD_TZ_FLEX_BOOTSTRAP_VERSION">
+                    <option value="3">JGLOBAL_SEF_ADVANCED_LEGACY</option>
+                    <option value="4">v4</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="grid_options" label="MOD_TZ_FLEX_GRID_OPTIONS_FIELDSET_LABEL">
+                <field type="radio" name="show_lightbox"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_FLEX_GRID_SHOW_LIGHTBOX_LABEL"
+                       description="MOD_TZ_FLEX_GRID_SHOW_LIGHTBOX_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field name="flex_grid_lightbox_option" type="List"
+                       label="MOD_TZ_FLEX_LIGHTBOX_LABEL"
+                       description="MOD_TZ_FLEX_LIGHTBOX_LABEL"
+                       multiple="true"
+                       default="[&quot;zoom&quot;, &quot;slideShow&quot;, &quot;fullScreen&quot;, &quot;thumbs&quot;, &quot;close&quot;]">
+                    <option value="zoom">zoom</option>
+                    <option value="share">share</option>
+                    <option value="slideShow">slideShow</option>
+                    <option value="fullScreen">fullScreen</option>
+                    <option value="download">download</option>
+                    <option value="thumbs">thumbs</option>
+                    <option value="close">close</option>
+                </field>
+                <field type="radio" name="show_title"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_FLEX_GRID_SHOW_TITLE_LABEL"
+                       description="MOD_TZ_FLEX_GRID_SHOW_TITLE_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_introtext"
+                       class="btn-group" default="0"
+                       label="MOD_TZ_FLEX_GRID_SHOW_INTROTEXT_LABEL"
+                       description="MOD_TZ_FLEX_GRID_SHOW_INTROTEXT_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="number" name="introtext_limit"
+                       showon="show_introtext:1"
+                       label="MOD_TZ_FLEX_GRID_INTROTEXT_LIMIT_LABEL"
+                       description="MOD_TZ_FLEX_GRID_INTROTEXT_LIMIT_DESC"/>
+                <field type="radio" name="show_created_date"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_FLEX_GRID_SHOW_CREATED_DATE_LABEL"
+                       description="MOD_TZ_FLEX_GRID_SHOW_CREATED_DATE_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_modified_date"
+                       class="btn-group" default="0"
+                       label="MOD_TZ_FLEX_GRID_SHOW_MODIFIED_DATE_LABEL"
+                       description="MOD_TZ_FLEX_GRID_SHOW_MODIFIED_DATE_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_publish_date"
+                       class="btn-group" default="0"
+                       label="MOD_TZ_FLEX_GRID_SHOW_PUBLISH_DATE_LABEL"
+                       description="MOD_TZ_FLEX_GRID_SHOW_PUBLISH_DATE_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_hit"
+                       class="btn-group" default="0"
+                       label="MOD_TZ_FLEX_GRID_SHOW_HIT_LABEL"
+                       description="MOD_TZ_FLEX_GRID_SHOW_HIT_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_author"
+                       class="btn-group" default="0"
+                       label="MOD_TZ_FLEX_GRID_SHOW_AUTHOR_LABEL"
+                       description="MOD_TZ_FLEX_GRID_SHOW_AUTHOR_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_category"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_FLEX_GRID_SHOW_CATEGORY_MAIN_LABEL"
+                       description="MOD_TZ_FLEX_GRID_SHOW_CATEGORY_MAIN_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_tag"
+                       class="btn-group" default="0"
+                       label="MOD_TZ_FLEX_GRID_SHOW_TAG_LABEL"
+                       description="MOD_TZ_FLEX_GRID_SHOW_TAG_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_readmore"
+                       class="btn-group" default="0"
+                       label="MOD_TZ_FLEX_GRID_SHOW_READ_MORE_LABEL"
+                       description="MOD_TZ_FLEX_GRID_SHOW_READ_MORE_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_noauth"
+                       class="btn-group" default="0"
+                       label="MOD_TZ_FLEX_GRID_SHOW_UNAUTHORISED_LINKS_LABEL"
+                       description="MOD_TZ_FLEX_GRID_SHOW_UNAUTHORISED_LINKS_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field type="radio" name="show_view_all"
+                       class="btn-group switcher" default="0"
+                       label="MOD_TZ_FLEX_GRID_SHOW_VIEW_ALL_PORTFOLIOS_LABEL"
+                       description="MOD_TZ_FLEX_GRID_SHOW_VIEW_ALL_PORTFOLIOS_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="text" name="view_all_link"
+                       showon="show_view_all:1"
+                       label="MOD_TZ_FLEX_GRID_LINK"
+                       description="MOD_TZ_FLEX_GRID_LINK_DESC"/>
+                <field type="text" name="view_all_text"
+                       default="View All Portfolios"
+                       showon="show_view_all:1"
+                       label="MOD_TZ_FLEX_GRID_TEXT"
+                       description="MOD_TZ_FLEX_GRID_TEXT_DESC"/>
+                <field type="list" name="view_all_target"
+                       showon="show_view_all:1"
+                       label="MOD_TZ_FLEX_GRID_TARGET_WINDOW_LABEL"
+                       description="MOD_TZ_FLEX_GRID_TARGET_WINDOW_DESC">
+                    <option value="">MOD_TZ_FLEX_GRID_VALUE_PARENT_WINDOW</option>
+                    <option value="_blank">MOD_TZ_FLEX_GRID_VALUE_NEW_WINDOW</option>
+                </field>
+
+                <field type="menuitem" name="usermenuitem"
+                       default="auto"
+                       label="MOD_TZ_FLEX_GRID_MENU_ITEM_AUTHOR_LABEL"
+                       description="MOD_TZ_FLEX_GRID_MENU_ITEM_AUTHOR_DESC">
+                    <option value="auto">JGLOBAL_AUTO</option>
+                </field>
+                <field type="menuitem" name="tagmenuitem"
+                       default="auto"
+                       label="MOD_TZ_FLEX_GRID_MENU_ITEM_TAG_LABEL"
+                       description="MOD_TZ_FLEX_GRID_MENU_ITEM_TAG_DESC">
+                    <option value="auto">JGLOBAL_AUTO</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="advanced">
+                <field type="modulelayout" name="layout"
+                       label="JFIELD_ALT_LAYOUT_LABEL"
+                       description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+                <field type="textarea" name="moduleclass_sfx"
+                       rows="3"
+                       label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                       description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+
+                <field type="list" name="cache"
+                       default="1"
+                       label="COM_MODULES_FIELD_CACHING_LABEL"
+                       description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <field type="number" name="cache_time"
+                       default="900"
+                       label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                       description="COM_MODULES_FIELD_CACHE_TIME_DESC"/>
+
+                <field type="hidden" name="cachemode"
+                       default="itemid">
+                    <option value="itemid"></option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+    <updateservers>
+        <server type="extension" pirority="1" name="TZ Flex Grid Module">
+            <![CDATA[https://www.tzportfolio.com/tzupdates/mod_tz_flex_grid.xml]]>
+        </server>
+    </updateservers>
+</extension>

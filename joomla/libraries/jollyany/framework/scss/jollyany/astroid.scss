@@ -1,0 +1,12 @@
+@import "header";
+@import "layouts";
+.author-wrap {
+  .author-social-links {
+    a {
+      color: inherit;
+      &:hover {
+        color: $colorMain;
+      }
+    }
+  }
+}

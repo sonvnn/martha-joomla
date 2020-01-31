@@ -1,0 +1,143 @@
+@mixin calc-grid-column($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints){
+  //.col-$class-offset-$index {
+  //  margin-left: percentage(($index / $grid-columns));
+  //}
+
+  // Common properties for all breakpoints
+  %grid-column {
+    position: relative;
+    width: 100%;
+    padding-right: $gutter / 2;
+    padding-left: $gutter / 2;
+  }
+  //// Allow columns to stretch full width below their breakpoints
+  //@for $i from 1 through $columns {
+  //  .col-xs-#{$i} {
+  //    @extend %grid-column;
+  //  }
+  //}
+  //
+  //@for $i from 1 through $columns {
+  //  .col-xs-#{$i} {
+  //    @include make-col($i, $columns);
+  //  }
+  //}
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+
+    // `$columns - 1` because offsetting by the width of an entire row isn't possible
+    @for $i from 0 through ($columns - 1) {
+      @if not ($infix == "" and $i == 0) { // Avoid emitting useless .offset-0
+        .col#{$infix}-offset-#{$i} {
+          @include make-col-offset($i, $columns);
+        }
+      }
+    }
+  }
+}
+
+
+@mixin table-row-variant($state, $background, $border: null) {
+  // Exact selectors below required to override `.table-striped` and prevent
+  // inheritance to nested tables.
+  //.table-#{$state} {
+  //  &,
+  //  > th,
+  //  > td {
+  //    background-color: $background;
+  //  }
+  //
+  //  @if $border != null {
+  //    th,
+  //    td,
+  //    thead th,
+  //    tbody + tbody {
+  //      border-color: $border;
+  //    }
+  //  }
+  //}
+  .table > thead > tr,
+  .table > tbody > tr,
+  .table > tfoot > tr {
+    > td.#{$state},
+    > th.#{$state},
+    &.#{$state} > td,
+    &.#{$state} > th {
+      background-color: $background;
+    }
+  }
+}
+
+
+// Form control sizing
+//
+// Relative text size, padding, and border-radii changes for form controls. For
+// horizontal sizing, wrap controls in the predefined grid classes. `<select>`
+// element gets special love because it's special, and that's a fact!
+@mixin input-size($input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  height: $input-height;
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+
+  select& {
+    height: $input-height;
+    line-height: $input-height;
+  }
+
+  textarea&,
+  select[multiple]& {
+    height: auto;
+  }
+}
+
+@mixin input-lg {
+  @include input-size($input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $input-border-radius-large);
+}
+@mixin input-sm {
+  @include input-size($input-height-small, $padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $input-border-radius-small);
+}
+
+// Center-align a block level element
+
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Panels
+
+@mixin panel-variant($border, $heading-text-color, $heading-bg-color, $heading-border) {
+  border-color: $border;
+
+  & > .panel-heading {
+    color: $heading-text-color;
+    background-color: $heading-bg-color;
+    border-color: $heading-border;
+
+    + .panel-collapse > .panel-body {
+      border-top-color: $border;
+    }
+    .badge {
+      color: $heading-bg-color;
+      background-color: $heading-text-color;
+    }
+  }
+  & > .panel-footer {
+    + .panel-collapse > .panel-body {
+      border-bottom-color: $border;
+    }
+  }
+}
+// Text overflow
+// Requires inline-block or block for proper styling
+
+@mixin text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

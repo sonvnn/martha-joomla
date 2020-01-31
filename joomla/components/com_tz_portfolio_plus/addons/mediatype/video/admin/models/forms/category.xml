@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <!-- Parameters for article's create or edit view -->
+    <fields name="params">
+        <!-- Start article options in category listings -->
+        <fieldset name="article_category_listing">
+            <field type="spacer" hr="true"/>
+            <field type="spacer" name="spacer_video_article_category_listing_name"
+                   class="alert alert-warning btn-block"
+                   label="PLG_MEDIATYPE_VIDEO_OPTIONS_LABEL"/>
+            <field type="list" name="mt_video_switcher"
+                   label="PLG_MEDIATYPE_VIDEO_SWITCHER_LABEL">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="thumbnail">PLG_MEDIATYPE_VIDEO_THUMBNAIL_LABEL</option>
+                <option value="video">PLG_MEDIATYPE_VIDEO_TITLE</option>
+            </field>
+            <field type="tzimagesizelist" name="mt_video_thumbnail_size"
+                   addon="video"
+                   addon_group="mediatype"
+                   param_name="video_thumbnail_size"
+                   param_text="title"
+                   param_value="image_name_prefix"
+                   label="PLG_MEDIATYPE_VIDEO_SIZE_LABEL">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="o">PLG_MEDIATYPE_VIDEO_ORIGINAL</option>
+            </field>
+            <field type="list" name="mt_cat_video_autoplay"
+                   label="PLG_MEDIATYPE_VIDEO_AUTOPLAY_LABEL">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field type="text" name="mt_cat_video_width"
+                   label="PLG_MEDIATYPE_VIDEO_VIDEO_WIDTH_LABEL"/>
+            <field type="text" name="mt_cat_video_height"
+                   label="PLG_MEDIATYPE_VIDEO_VIDEO_HEIGHT_LABEL"/>
+        </fieldset>
+        <!-- End article options in category listings -->
+
+        <!-- Start article options -->
+        <fieldset name="article">
+            <field type="spacer" hr="true"/>
+            <field type="spacer" name="spacer_video_article_name"
+                   class="alert alert-warning btn-block"
+                   label="PLG_MEDIATYPE_VIDEO_OPTIONS_LABEL"/>
+            <field type="list" name="mt_video_autoplay"
+                   label="PLG_MEDIATYPE_VIDEO_AUTOPLAY_LABEL">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field type="text" name="mt_video_width"
+                   label="PLG_MEDIATYPE_VIDEO_VIDEO_WIDTH_LABEL"/>
+            <field type="text" name="mt_video_height"
+                   label="PLG_MEDIATYPE_VIDEO_VIDEO_HEIGHT_LABEL"/>
+
+            <!-- Start related options -->
+            <field type="list" name="mt_video_related_show_thumbnail"
+                   label="PLG_MEDIATYPE_VIDEO_RELATED_SHOW_THUMBNAIL_LABEL">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="tzimagesizelist" name="mt_video_related_thumb_size"
+                   addon="video"
+                   addon_group="mediatype"
+                   param_name="video_thumbnail_size"
+                   param_text="title"
+                   param_value="image_name_prefix"
+                   label="PLG_MEDIATYPE_VIDEO_RELATED_THUMBNAIL_SIZE_LABEL">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="o">PLG_MEDIATYPE_VIDEO_ORIGINAL</option>
+            </field>
+            <!-- End related options -->
+        </fieldset>
+        <!-- End article options -->
+    </fields>
+    <!-- End parameters for article's create or edit view -->
+</form>

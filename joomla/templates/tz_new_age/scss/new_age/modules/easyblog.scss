@@ -1,0 +1,72 @@
+// EasyBlog Default
+@import "../../../../../libraries/jollyany/framework/scss/jollyany/modules/easyblog";
+#eb {
+  .btn {
+    border-radius: $btn-border-radius;
+    padding: $btn-padding-y $btn-padding-x;
+  }
+  .eb-post, .eb-entry-body {
+    overflow: hidden;
+    .card-body {
+      padding: 5%;
+    }
+  }
+  .eb-post {
+    +.eb-post {
+      padding-top: 0;
+    }
+  }
+  .eb-entry-body .eb-post-thumb {
+    margin-bottom: 0;
+  }
+  .eb-post-thumb {
+    margin-bottom: 0;
+  }
+  .eb-post-title {
+    line-height: 1.1;
+  }
+  .eb-entry-nav{
+    border-color: $border-color;
+    >div>a {
+      background-color: $white;
+    }
+  }
+  .eb-entry-author-recents {
+    background-color: $white;
+  }
+  .eb-mod-media-title {
+    color: $dark;
+  }
+  .eb-introtext {
+    font-weight: 400;
+  }
+  .eb-mod-body {
+    font-size: 14px;
+    line-height: 1.7;
+    * {
+      line-height: 1.7;
+    }
+  }
+  .eb-mod-thumb .eb-mod-image-cover {
+    border: none !important;
+    &:before {
+      border: none !important;
+    }
+  }
+  .eb-showcase-article {
+    line-height: 1.7;
+    font-size: 95%;
+  }
+  .eb-showcases {
+    border-color: $border-color;
+  }
+  .mod-item+.mod-item {
+    border-color: $border-color !important;
+  }
+  &.eb-view-entry {
+    .eb-avatar img {
+      width: 64px;
+      height: 64px;
+    }
+  }
+}

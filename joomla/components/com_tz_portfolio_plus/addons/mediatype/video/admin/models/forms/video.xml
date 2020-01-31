@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <!-- Form's field for article's create or edit view -->
+    <fields name="media">
+        <fields name="video" addfieldpath="/administrator/components/com_tz_portfolio_plus/models/fields">
+            <fieldset>
+                <!-- FIELDS FOR VIDEO -->
+                <field type="list" name="type"
+                       label="PLG_MEDIATYPE_VIDEO_TYPE_LABEL">
+                    <option value="embed">PLG_MEDIATYPE_VIDEO_EMBED</option>
+                    <option value="youtube">PLG_MEDIATYPE_VIDEO_YOUTUBE</option>
+                    <option value="vimeo">PLG_MEDIATYPE_VIDEO_VIMEO</option>
+                </field>
+                <field type="text" name="code"
+                       label="JGLOBAL_FIELD_ID_LABEL"
+                        description="PLG_MEDIATYPE_VIDEO_CODE_DESC"/>
+                <field type="textarea" name="embed_code"
+                       label="PLG_MEDIATYPE_VIDEO_EMBED_CODE_LABEL"
+                        description="PLG_MEDIATYPE_VIDEO_EMBED_CODE_DESC"/>
+                <field type="tzcheckbox" name="thumbnail_remove"
+                       merge="true"
+                        label="PLG_MEDIATYPE_VIDEO_THUMBNAIL_REMOVE_LABEL"/>
+                <field type="tzmedia" name="thumbnail"
+                       img_max-width="200px"
+                       img_prefix="o"
+                       label="PLG_MEDIATYPE_VIDEO_THUMBNAIL_LABEL"
+                        description="PLG_MEDIATYPE_VIDEO_THUMBNAIL_DESC"/>
+                <field type="text" name="title"
+                       label="PLG_MEDIATYPE_VIDEO_TITLE_LABEL"/>
+            </fieldset>
+        </fields>
+    </fields>
+    <!-- End form's field for article's create or edit view -->
+</form>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fields name="attribs">
+        <fieldset name="tpl_selena_params" label="PLG_SYSTEM_TPL_SELENA_PARAMS_FIELDSET_LABEL">
+            <field type="radio" name="tpl_selena_type"
+                   class="btn-group" default="standard"
+                        label="PLG_SYSTEM_TPL_SELENA_PARAMS_TYPE">
+                <option value="standard">PLG_SYSTEM_TPL_SELENA_PARAMS_STANDARD</option>
+                <option value="landscape">PLG_SYSTEM_TPL_SELENA_PARAMS_LANDSCAPE</option>
+                <option value="portrait">PLG_SYSTEM_TPL_SELENA_PARAMS_PORTRAIT</option>
+            </field>
+            <field type="list" name="tpl_selena_title_position"
+                   default="middle"
+                   label="PLG_SYSTEM_TPL_SELENA_PARAMS_TITLE_POSITION">
+                <option value="top-left">PLG_SYSTEM_TPL_SELENA_PARAMS_TOP_LEFT</option>
+                <option value="top-middle">PLG_SYSTEM_TPL_SELENA_PARAMS_TOP_MIDDLE</option>
+                <option value="top-right">PLG_SYSTEM_TPL_SELENA_PARAMS_TOP_RIGHT</option>
+                <option value="middle-left">PLG_SYSTEM_TPL_SELENA_PARAMS_MIDDLE_LEFT</option>
+                <option value="middle">PLG_SYSTEM_TPL_SELENA_PARAMS_MIDDLE</option>
+                <option value="middle-right">PLG_SYSTEM_TPL_SELENA_PARAMS_MIDDLE_RIGHT</option>
+                <option value="bottom-left">PLG_SYSTEM_TPL_SELENA_PARAMS_BOTTOM_LEFT</option>
+                <option value="bottom-middle">PLG_SYSTEM_TPL_SELENA_PARAMS_BOTTOM_MIDDLE</option>
+                <option value="bottom-right">PLG_SYSTEM_TPL_SELENA_PARAMS_BOTTOM_RIGHT</option>
+            </field>
+        </fieldset>
+    </fields>
+</form>

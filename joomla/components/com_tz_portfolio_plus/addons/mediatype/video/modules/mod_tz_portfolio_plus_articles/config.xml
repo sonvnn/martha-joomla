@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="params">
+        <fieldset name="mediatype_video"
+                  label="PLG_MEDIATYPE_VIDEO_FIELDSET_LABEL">
+            <field type="radio" name="mt_video_switcher"
+                   default="thumbnail" class="btn-group"
+                   label="PLG_MEDIATYPE_VIDEO_SWITCHER_LABEL">
+                <option value="thumbnail">PLG_MEDIATYPE_VIDEO_THUMBNAIL_LABEL</option>
+                <option value="video">PLG_MEDIATYPE_VIDEO_TITLE</option>
+            </field>
+            <field type="tzimagesizelist" name="mt_video_thumbnail_size"
+                   addon="video"
+                   addon_group="mediatype"
+                   param_name="video_thumbnail_size"
+                   param_text="title"
+                   param_value="image_name_prefix"
+                   label="PLG_MEDIATYPE_VIDEO_SIZE_LABEL">
+                <option value="o">PLG_MEDIATYPE_VIDEO_ORIGINAL</option>
+            </field>
+            <field type="radio" name="mt_video_autoplay"
+                   default="0" class="btn-group"
+                   label="PLG_MEDIATYPE_VIDEO_AUTOPLAY_LABEL">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field type="text" name="mt_video_width"
+                   label="PLG_MEDIATYPE_VIDEO_VIDEO_WIDTH_LABEL"/>
+            <field type="text" name="mediatype_video_height"
+                   label="PLG_MEDIATYPE_VIDEO_VIDEO_HEIGHT_LABEL"/>
+        </fieldset>
+    </fields>
+</form>

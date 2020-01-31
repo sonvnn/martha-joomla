@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="params">
+        <fieldset name="basic">
+            <!-- Start feed options -->
+            <field type="spacer" name="spacer_video_feed" hr="true"/>
+            <field type="spacer" name="spacer_video_feed_name"
+                   class="alert alert-warning btn-block"
+                   label="PLG_MEDIATYPE_VIDEO_FEED_OPTIONS_LABEL"/>
+            <field type="list" name="mt_video_show_feed_image"
+                   label="PLG_MEDIATYPE_VIDEO_SHOW_FEED_THUMBNAIL_LABEL">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="tzimagesizelist" name="mt_video_feed_size"
+                   addon="video"
+                   addon_group="mediatype"
+                   param_name="video_thumbnail_size"
+                   param_text="title"
+                   param_value="image_name_prefix"
+                   label="PLG_MEDIATYPE_VIDEO_FEED_SIZE_LABEL">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="o">PLG_MEDIATYPE_VIDEO_ORIGINAL</option>
+            </field>
+            <!-- End feed options -->
+        </fieldset>
+    </fields>
+</form>

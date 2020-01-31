@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="module" client="site" method="upgrade">
+    <name>mod_tz_portfolio_plus_carousel</name>
+    <author>DuongTVTemPlaza</author>
+    <creationDate>January 11 2018</creationDate>
+    <copyright>Copyright (C) 2011-2018 TZ Portfolio.com. All rights reserved.</copyright>
+    <license>GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html</license>
+    <authorEmail>support@templaza.com</authorEmail>
+    <authorUrl>www.tzportfolio.com/</authorUrl>
+    <version>1.0.4</version>
+    <description>MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_XML_DESCRIPTION</description>
+    <files>
+        <filename module="mod_tz_portfolio_plus_carousel">mod_tz_portfolio_plus_carousel.php</filename>
+        <folder>css</folder>
+        <folder>js</folder>
+        <folder>tmpl</folder>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <filename>mod_tz_portfolio_plus_carousel.xml</filename>
+    </files>
+    <languages folder="languages">
+        <language tag="en-GB">en-GB/en-GB.mod_tz_portfolio_plus_carousel.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_tz_portfolio_plus_carousel.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="administrator/components/com_tz_portfolio_plus/models/fields">
+                <field type="tzcategory" name="catid"
+                       multiple="true"
+                       label="JCATEGORY">
+                    <option value="">JOPTION_ALL_CATEGORIES</option>
+                </field>
+                <field type="tzmediatypes" name="media_types"
+                       multiple="true"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_MEDIA_TYPES_LABEL">
+                    <option value="">MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_ALL_MEDIA_TYPES</option>
+                    <option value="none">MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_NO_MEDIA</option>
+                </field>
+                <field type="tztemplates" name="template_id"
+                       label="COM_TZ_PORTFOLIO_PLUS_TEMPLATE_LABEL">
+                    <option value="0">JOPTION_USE_DEFAULT</option>
+                </field>
+                <field type="number" name="article_limit"
+                       default="5"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_ARTICLE_LIMIT_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_ARTICLE_LIMIT_DESC"/>
+                <field type="list" name="orderby_sec"
+                       default="rdate"
+                       label="JGLOBAL_ARTICLE_ORDER_LABEL"
+                       description="JGLOBAL_ARTICLE_ORDER_DESC">
+                    <option value="rdate">JGLOBAL_MOST_RECENT_FIRST</option>
+                    <option value="date">JGLOBAL_OLDEST_FIRST</option>
+                    <option value="alpha">JGLOBAL_TITLE_ALPHABETICAL</option>
+                    <option value="ralpha">JGLOBAL_TITLE_REVERSE_ALPHABETICAL</option>
+                    <option value="author">JGLOBAL_AUTHOR_ALPHABETICAL</option>
+                    <option value="rauthor">JGLOBAL_AUTHOR_REVERSE_ALPHABETICAL</option>
+                    <option value="hits">JGLOBAL_MOST_HITS</option>
+                    <option value="rhits">JGLOBAL_LEAST_HITS</option>
+                    <option value="order">JGLOBAL_ARTICLE_MANAGER_ORDER</option>
+                </field>
+                <field type="radio" name="show_title"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_TITLE_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_TITLE_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_introtext"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_INTROTEXT_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_INTROTEXT_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="number" name="introtext_limit"
+                       showon="show_introtext:1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_INTROTEXT_LIMIT_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_INTROTEXT_LIMIT_DESC"/>
+                <field type="radio" name="show_created_date"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_CREATED_DATE_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_CREATED_DATE_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_modified_date"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_MODIFIED_DATE_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_MODIFIED_DATE_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_publish_date"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_PUBLISH_DATE_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_PUBLISH_DATE_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_hit"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_HIT_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_HIT_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_author"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_AUTHOR_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_AUTHOR_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_category_main"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_CATEGORY_MAIN_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_CATEGORY_MAIN_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_category_sec"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_CATEGORY_SEC_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_CATEGORY_SEC_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_tag"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_TAG_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_TAG_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_readmore"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_READ_MORE_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_READ_MORE_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="show_noauth"
+                       class="btn-group" default="0"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_UNAUTHORISED_LINKS_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_UNAUTHORISED_LINKS_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field type="radio" name="show_view_all"
+                       class="btn-group switcher" default="0"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_VIEW_ALL_PORTFOLIOS_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_VIEW_ALL_PORTFOLIOS_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="text" name="view_all_link"
+                       showon="show_view_all:1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_LINK"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_LINK_DESC"/>
+                <field type="text" name="view_all_text"
+                       default="View All Portfolios"
+                       showon="show_view_all:1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_TEXT"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_TEXT_DESC"/>
+                <field type="list" name="view_all_target"
+                       showon="show_view_all:1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_TARGET_WINDOW_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_TARGET_WINDOW_DESC">
+                    <option value="">MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_VALUE_PARENT_WINDOW</option>
+                    <option value="_blank">MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_VALUE_NEW_WINDOW</option>
+                </field>
+
+                <field type="menuitem" name="usermenuitem"
+                       default="auto"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_MENU_ITEM_AUTHOR_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_MENU_ITEM_AUTHOR_DESC">
+                    <option value="auto">JGLOBAL_AUTO</option>
+                </field>
+                <field type="menuitem" name="tagmenuitem"
+                       default="auto"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_MENU_ITEM_TAG_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_MENU_ITEM_TAG_DESC">
+                    <option value="auto">JGLOBAL_AUTO</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="carousel_options" label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_OPTIONS_FIELDSET_LABEL">
+                <field type="radio" name="cr_loop"
+                       class="btn-group" default="0"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_LOOP_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_LOOP_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="radio" name="cr_autoplay"
+                       class="btn-group" default="0"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_AUTOPLAY_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_AUTOPLAY_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="number" name="cr_autoplayTimeout"
+                       default="5000" min="1" showon="cr_autoplay:1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_AUTOPLAY_TIMEOUT_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_AUTOPLAY_TIMEOUT_DESC"/>
+                <field type="radio" name="cr_autoplayHoverPause"
+                       class="btn-group" default="0" showon="cr_autoplay:1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_AUTOPLAY_HOVER_PAUSE_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_AUTOPLAY_HOVER_PAUSE_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="radio" name="cr_mouseDrag"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_MOUSE_DRAG_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_MOUSE_DRAG_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="radio" name="cr_touchDrag"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_TOUCH_DRAG_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_TOUCH_DRAG_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="radio" name="cr_nav"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_NAVIGATION_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_NAVIGATION_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="number" name="cr_slideBy"
+                       default="1" min="1" showon="cr_nav:1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SLIDEBY_LABEL"/>
+                <field type="radio" name="cr_dots"
+                       class="btn-group" default="1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_DOTS_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_DOTS_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="cr_lazyLoad"
+                       class="btn-group" default="0"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_LAZY_LOAD_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_LAZY_LOAD_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="radio" name="cr_center"
+                       class="btn-group" default="0"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_CENTER_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_CENTER_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="cr_autoWidth"
+                       class="btn-group" default="0"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_AUTO_WIDTH_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_AUTO_WIDTH_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="radio" name="cr_autoHeight"
+                       class="btn-group" default="0"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_AUTO_HEIGHT_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_AUTO_HEIGHT_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="radio" name="cr_rtl"
+                       class="btn-group" default="0"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_RIGHT_TO_LEFT_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_RIGHT_TO_LEFT_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="number" name="cr_items"
+                       default="1" min="1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_ITEMS_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_ITEMS_DESC"/>
+                <field type="number" name="cr_margin"
+                       default="0" min="0"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_ITEM_MARGIN_RIGHT_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_ITEM_MARGIN_RIGHT_DESC"/>
+                <field type="number" name="cr_stagePadding"
+                       default="0" min="0"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_STAGE_PADDING_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_STAGE_PADDING_DESC"/>
+                <field type="text" name="cr_animateIn"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_ANIMATE_IN_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_ANIMATE_IN_DESC"/>
+                <field type="text" name="cr_animateOut"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_ANIMATE_OUT_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_ANIMATE_OUT_DESC"/>
+                <field type="number" name="cr_smartSpeed"
+                       default="250" min="1"
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SMART_SPEED_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SMART_SPEED_DESC"/>
+                <field type="tzmultiplefield" name="cr_responsive"
+                       default='{"width":992,"item":3},{"width":768,"item":2},{"width":0,"item":1}'
+                       label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_RESPONSIVE_LABEL"
+                       description="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_RESPONSIVE_DESC">
+                    <field type="number" name="width"
+                           min="0"
+                           field_required="true" table_required="true"
+                           label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_WIDTH_LABEL"/>
+                    <field type="number" name="item"
+                           min="0"
+                           field_required="true" table_required="true"
+                           label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_ITEM_LABEL"/>
+                </field>
+            </fieldset>
+
+            <fieldset name="advanced">
+                <field type="modulelayout" name="layout"
+                       label="JFIELD_ALT_LAYOUT_LABEL"
+                       description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+                <field type="textarea" name="moduleclass_sfx"
+                       rows="3"
+                       label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                       description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+
+                <field type="list" name="cache"
+                       default="1"
+                       label="COM_MODULES_FIELD_CACHING_LABEL"
+                       description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <field type="number" name="cache_time"
+                       default="900"
+                       label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                       description="COM_MODULES_FIELD_CACHE_TIME_DESC"/>
+
+                <field type="hidden" name="cachemode"
+                       default="itemid">
+                    <option value="itemid"></option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+    <updateservers>
+        <server type="extension" pirority="1" name="TZ Portfolio Plus - Carousel Module">
+            <![CDATA[https://www.tzportfolio.com/tzupdates/mod_tz_portfolio_plus_carousel.xml]]>
+        </server>
+    </updateservers>
+</extension>

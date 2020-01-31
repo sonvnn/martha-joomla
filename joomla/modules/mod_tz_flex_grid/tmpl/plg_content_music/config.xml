@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fields name="params">
+        <fieldset name="basic">
+            <field type="spacer" name="spacer_music_name"
+                   class="alert alert-warning btn-block"
+                   label="PLG_CONTENT_MUSIC_OPTIONS_LABEL"/>​
+            <field type="radio" name="music_show_countsong"
+                   default="1" class="btn-group"
+                   label="PLG_CONTENT_MUSIC_SHOW_COUNT_SONG_LABEL">
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+        </fieldset>        ​
+    </fields>
+</form>

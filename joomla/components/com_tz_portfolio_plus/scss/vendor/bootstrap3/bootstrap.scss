@@ -1,0 +1,123 @@
+
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "variables";
+@import "mixins";
+
+.tpp-bootstrap {
+  // Create offset columns
+  @include calc-grid-column();
+
+  // table-condensed
+  //
+  // Condensed table w/ half padding
+  //
+  .table-condensed {
+    th,
+    td {
+      padding: $table-cell-padding-sm;
+    }
+  }
+
+  @import "forms";
+  @import "input-group";
+  @import "buttons";
+  @import "media";
+  @import "button-groups";
+  @import "panels";
+  @import "thumbnails";
+  @import "wells";
+
+  .img-responsive {
+    @include img-fluid;
+  }
+
+  .center-block {
+    @include center-block();
+  }
+  .pull-right {
+    float: right !important;
+  }
+  .pull-left {
+    float: left !important;
+  }
+
+  .dropdown-menu {
+    // Dividers (basically an hr) within the dropdown
+    .divider {
+      @include nav-divider($dropdown-divider-bg);
+    }
+  }
+
+  // Opposite alignment of blockquote
+  //
+  // Heads up: `blockquote.pull-right` has been deprecated as of v3.1.0.
+  .blockquote-reverse,
+  blockquote.pull-right {
+    padding-right: 15px;
+    padding-left: 0;
+    border-right: 5px solid $blockquote-border-color;
+    border-left: 0;
+    text-align: right;
+
+    // Account for citation
+    footer,
+    small,
+    .small {
+      &:before { content: ''; }
+      &:after {
+        content: '\00A0 \2014'; // nbsp, em dash
+      }
+    }
+  }
+  // Horizontal description lists
+  //
+  // Defaults to being stacked without any of the below styles applied, until the
+  // grid breakpoint is reached (default of ~768px).
+
+  .dl-horizontal {
+    dd {
+      @extend .clearfix; // Clear the floated `dt` if an empty `dd` is present
+    }
+
+    @media (min-width: $dl-horizontal-breakpoint) {
+      dt {
+        float: left;
+        width: ($dl-horizontal-offset - 20);
+        clear: left;
+        text-align: right;
+        @include text-overflow();
+      }
+      dd {
+        margin-left: $dl-horizontal-offset;
+      }
+    }
+  }
+
+  // Heads up!
+  //
+  // We don't use the `.opacity()` mixin here since it causes a bug with text
+  // fields in IE7-8. Source: https://github.com/twbs/bootstrap/pull/3552.
+
+  .fade {
+    &.in {
+      opacity: 1;
+    }
+  }
+
+  // Modal background
+  .modal-backdrop {
+    &.in { opacity: $modal-backdrop-opacity; }
+  }
+
+  // Navbar collapse (body)
+  .navbar-collapse {
+    &.in { opacity: $modal-backdrop-opacity; }
+  }
+  @media (min-width: $grid-float-breakpoint) {
+    &.in {
+      overflow-y: visible;
+    }
+  }
+}

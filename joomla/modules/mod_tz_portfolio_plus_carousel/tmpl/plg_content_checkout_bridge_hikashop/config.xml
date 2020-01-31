@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fields name="params">
+        <fieldset name="basic">            ​
+            <field type="spacer" name="spacer_purchase_name"
+                   class="alert alert-success btn-block"
+                   label="PLG_CONTENT_PURCHASE_OPTIONS_LABEL"/>
+            <field type="text" label="PLG_CONTENT_PURCHASE_TEXT_BUTTON_LABEL" name="text_button" default="Buy Now"/>
+            <field type="list" label="PLG_CONTENT_PURCHASE_SHOW_DISCOUNT_LABEL" name="show_discount" default="1">
+                <option value="0">JNO</option>
+                <option value="1">DISPLAY_DISCOUNT_AMOUNT</option>
+                <option value="2">DISPLAY_PRICE_BEFORE_DISCOUNT</option>
+            </field>
+            <field type="list" label="PLG_CONTENT_PURCHASE_SHOW_TAX_LABEL" name="price_with_tax" default="1">
+                <option value="0">NO_TAX</option>
+                <option value="1">WITH_TAX</option>
+                <option value="2">DISPLAY_BOTH</option>
+            </field>
+            <field type="list" label="PLG_CONTENT_PURCHASE_SHOW_ORIGINAL_PRICE_LABEL" name="show_original_price"
+                   default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field type="list" label="PLG_CONTENT_PURCHASE_SHOW_DIMENSION_LABEL" name="show_dimension" default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field type="list" label="PLG_CONTENT_PURCHASE_SHOW_BRAND_LABEL" name="show_brand" default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field type="list" label="PLG_CONTENT_PURCHASE_SHOW_STOCK_LABEL" name="show_stock" default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field type="spacer" name="spacer_purchase_hr" hr="true"/>          ​
+        </fieldset>        ​
+    </fields>
+</form>

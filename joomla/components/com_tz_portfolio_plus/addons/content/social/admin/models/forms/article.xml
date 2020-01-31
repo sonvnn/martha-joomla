@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <!-- Parameters for article's create or edit view -->
+    <fields name="attribs">
+        <fieldset name="article">
+            <field type="spacer" name="spacer_social_hr" hr="true"/>
+            <field type="spacer" name="spacer_social_name"
+                   class="alert alert-warning btn-block"
+                    label="PLG_CONTENT_SOCIAL_OPTIONS_LABEL"/>
+            <field type="list" name="show_twitter_button"
+                   label="PLG_CONTENT_SOCIAL_SHOW_TWITTER_BUTTON_LABEL"
+                   description="PLG_CONTENT_SOCIAL_SHOW_TWITTER_BUTTON_DESC">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="list" name="show_facebook_button"
+                   label="PLG_CONTENT_SOCIAL_SHOW_FACEBOOK_BUTTON_LABEL"
+                   description="PLG_CONTENT_SOCIAL_SHOW_FACEBOOK_BUTTON_DESC">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="list" name="show_google_button"
+                   label="PLG_CONTENT_SOCIAL_SHOW_GOOGLE_BUTTON_LABEL"
+                   description="PLG_CONTENT_SOCIAL_SHOW_GOOGLE_BUTTON_DESC">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="list" name="show_pinterest_button"
+                   label="PLG_CONTENT_SOCIAL_SHOW_PINTEREST_BUTTON_LABEL"
+                   description="PLG_CONTENT_SOCIAL_SHOW_PINTEREST_BUTTON_DESC">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="list" name="show_linkedin_button"
+                   label="PLG_CONTENT_SOCIAL_SHOW_LINKEDIN_BUTTON_LABEL"
+                   description="PLG_CONTENT_SOCIAL_SHOW_LINKEDIN_BUTTON_DESC">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+        </fieldset>
+    </fields>
+    <!-- End parameters for article's create or edit view -->
+</form>

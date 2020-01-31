@@ -1,0 +1,15 @@
+.astroid-social-icons {
+  >li {
+    margin: 0 1.5rem 0 0;
+    min-width: inherit;
+    text-align: center;
+    a {
+      color: $colorSocialLink !important;
+    }
+    &:hover {
+      a {
+        color: $colorMain !important;
+      }
+    }
+  }
+}

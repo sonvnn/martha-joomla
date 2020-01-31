@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="tz_portfolio_plus-plugin" group="content" method="upgrade">
+	<name>plg_content_social</name>
+	<author>DuongTVTemPlaza</author>
+	<creationDate>Aug, 09th 2012</creationDate>
+	<copyright>Copyright (C) 2015 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>support@templaza.com</authorEmail>
+	<authorUrl>www.templaza.com</authorUrl>
+	<version>1.0.1</version>
+	<description>PLG_CONTENT_SOCIAL_XML_DESCRIPTION</description>
+
+	<files>
+		<filename plugin="social">social.php</filename>
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<folder>admin</folder>
+		<folder>css</folder>
+		<folder>language</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<!-- Start article options -->
+				<field type="spacer" name="spacer_article_name"
+					   class="alert alert-warning btn-block"
+					   label="COM_TZ_PORTFOLIO_PLUS_ATTRIBS_FIELDSET_LABEL"/>
+				<field name="show_twitter_button"
+					   type="radio" class="btn-group switch"
+					   default="1"
+					   label="PLG_CONTENT_SOCIAL_SHOW_TWITTER_BUTTON_LABEL"
+					   description="PLG_CONTENT_SOCIAL_SHOW_TWITTER_BUTTON_DESC">
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+				<field name="show_facebook_button"
+					   type="radio" class="btn-group switch"
+					   default="1"
+					   label="PLG_CONTENT_SOCIAL_SHOW_FACEBOOK_BUTTON_LABEL"
+					   description="PLG_CONTENT_SOCIAL_SHOW_FACEBOOK_BUTTON_DESC">
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+				<field name="show_google_button"
+					   type="radio" class="btn-group switch"
+					   default="1"
+					   label="PLG_CONTENT_SOCIAL_SHOW_GOOGLE_BUTTON_LABEL"
+					   description="PLG_CONTENT_SOCIAL_SHOW_GOOGLE_BUTTON_DESC">
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+				<field name="show_pinterest_button" type="radio"
+					   class="btn-group switch" default="1"
+					   label="PLG_CONTENT_SOCIAL_SHOW_PINTEREST_BUTTON_LABEL"
+					   description="PLG_CONTENT_SOCIAL_SHOW_PINTEREST_BUTTON_DESC">
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+				<field name="show_linkedin_button" type="radio"
+					   class="btn-group switch" default="1"
+					   label="PLG_CONTENT_SOCIAL_SHOW_LINKEDIN_BUTTON_LABEL"
+					   description="PLG_CONTENT_SOCIAL_SHOW_LINKEDIN_BUTTON_DESC">
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+				<!-- End article options -->
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>

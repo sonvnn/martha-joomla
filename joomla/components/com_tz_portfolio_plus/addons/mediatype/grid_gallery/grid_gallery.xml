@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="tz_portfolio_plus-plugin" group="mediatype" method="upgrade">
+    <name>plg_mediatype_grid_gallery</name>
+    <author>Sonny</author>
+    <creationDate>February 24th, 2019</creationDate>
+    <copyright>Copyright (C) 2015-2019 TZ Portfolio. All rights reserved.</copyright>
+    <license>GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html</license>
+    <authorEmail>support@templaza.com</authorEmail>
+    <authorUrl>www.templaza.com/</authorUrl>
+    <version>1.0.7</version>
+    <description>PLG_MEDIATYPE_GRID_GALLERY_XML_DESCRIPTION</description>
+
+    <files>
+        <filename plugin="grid_gallery">grid_gallery.php</filename>
+        <filename>controller.php</filename>
+        <filename>index.html</filename>
+        <folder>admin</folder>
+        <folder>controllers</folder>
+        <folder>css</folder>
+        <folder>fonts</folder>
+        <folder>js</folder>
+        <folder>language</folder>
+        <folder>libraries</folder>
+        <folder>models</folder>
+        <folder>modules</folder>
+        <folder>tmpl</folder>
+        <folder>views</folder>
+    </files>
+
+    <config>
+        <fields name="params" addfieldpath="administrator/components/com_tz_portfolio_plus/models/fields">
+            <!-- Parameters for back-end -->
+            <fieldset name="basic">
+                <field type="text" name="grid_gallery_file_size"
+                       default="10"
+                       label="PLG_MEDIATYPE_GRID_GALLERY_MAXIMUM_FILE_SIZE_LABEL"
+                       description="PLG_MEDIATYPE_GRID_GALLERY_MAXIMUM_FILE_SIZE_DESC"/>
+                <field type="text" name="grid_gallery_file_type"
+                       default="bmp,gif,jpg,jpeg,png"
+                       label="PLG_MEDIATYPE_GRID_GALLERY_FILE_TYPES_LABEL"
+                       description="PLG_MEDIATYPE_GRID_GALLERY_FILE_TYPES_DESC"/>
+                <field name="grid_gallery_lightbox_option" type="List"
+                       label="PLG_MEDIATYPE_GRID_GALLERY_LIGHTBOX_LABEL"
+                       description="PLG_MEDIATYPE_GRID_GALLERY_LIGHTBOX_LABEL"
+                       multiple="true"
+                       default="[&quot;zoom&quot;, &quot;slideShow&quot;, &quot;fullScreen&quot;, &quot;thumbs&quot;, &quot;close&quot;]">
+                    <option value="zoom">zoom</option>
+                    <option value="share">share</option>
+                    <option value="slideShow">slideShow</option>
+                    <option value="fullScreen">fullScreen</option>
+                    <option value="download">download</option>
+                    <option value="thumbs">thumbs</option>
+                    <option value="close">close</option>
+                </field>
+                <field type="tzmultiplefield" name="grid_gallery_size"
+                       default='{"title":"XSmall","width":"100","image_name_prefix":"xs"},{"title":"Small","width":"200","image_name_prefix":"s"},{"title":"Medium","width":"400","image_name_prefix":"m"},{"title":"Large","width":"600","image_name_prefix":"l"},{"title":"XLarge","width":"900","image_name_prefix":"xl"}'
+                       label="PLG_MEDIATYPE_GRID_GALLERY_SIZE_LABEL">
+                    <field type="text" name="title" table_required="true"
+                           field_required="true"
+                           label="PLG_MEDIATYPE_GRID_GALLERY_TITLE_LABEL"/>
+                    <field type="text" name="width" table_required="true"
+                           field_required="true"
+                           label="PLG_MEDIATYPE_GRID_GALLERY_WIDTH_LABEL"/>
+                    <field type="text" name="image_name_prefix" table_required="true"
+                           field_required="true" value_validate="o"
+                           label="PLG_MEDIATYPE_GRID_GALLERY_NAME_PREFIX"/>
+                </field>
+            </fieldset>
+            <!-- End parameters for back-end -->
+
+            <!-- Parameters for front-end -->
+            <fieldset name="front_end"
+                      label="PLG_MEDIATYPE_GRID_GALLERY_FRONT_END_FIELDSET_LABEL"
+                      description="PLG_MEDIATYPE_GRID_GALLERY_CONFIG_SETTINGS_DESC">
+                <field type="radio" name="mt_grid_gallery_show_feed_image"
+                       class="btn-group" default="1"
+                       label="PLG_MEDIATYPE_GRID_GALLERY_SHOW_FEED_IMAGE_LABEL">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="tzimagesizelist" name="mt_grid_gallery_feed_size"
+                       addon="grid_gallery"
+                       addon_group="mediatype"
+                       param_name="grid_gallery_size"
+                       param_text="title"
+                       param_value="image_name_prefix"
+                       label="PLG_MEDIATYPE_GRID_GALLERY_FEED_SIZE_LABEL">
+                    <option value="o">PLG_MEDIATYPE_GRID_GALLERY_ORIGINAL</option>
+                </field>
+
+                <!-- Start article options in category listings -->
+                <field type="spacer" name="spacer_grid_gallery_article_category_listing_hr" hr="true"/>
+                <field type="spacer" name="spacer_grid_gallery_article_category_listing_name"
+                       class="alert alert-warning btn-block"
+                       label="COM_TZ_PORTFOLIO_PLUS_SPACER_ARTICLE_OPTIONS_IN_CATEGORY_LISTINGS"/>
+                <field type="radio" name="mt_cat_grid_gallery_show"
+                       default="1" class="switcher btn-group"
+                       label="PLG_MEDIATYPE_GRID_GALLERY_SHOW_LABEL"
+                       description="PLG_MEDIATYPE_GRID_GALLERY_SHOW_LABEL">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="tzimagesizelist" name="mt_cat_grid_gallery_size"
+                       addon="grid_gallery"
+                       addon_group="mediatype"
+                       param_name="grid_gallery_size"
+                       param_text="title"
+                       param_value="image_name_prefix"
+                       label="PLG_MEDIATYPE_GRID_GALLERY_SIZE_LABEL">
+                    <option value="o">PLG_MEDIATYPE_GRID_GALLERY_ORIGINAL</option>
+                </field>
+                <!-- End article options in category listings -->
+
+                <!-- Start article view options -->
+                <field type="spacer" name="spacer_grid_gallery_article_hr" hr="true"/>
+                <field type="spacer" name="spacer_grid_gallery_article_name"
+                       class="alert alert-warning btn-block"
+                       label="COM_TZ_PORTFOLIO_PLUS_ATTRIBS_FIELDSET_LABEL"/>
+                <field type="radio" name="mt_grid_gallery_show"
+                       default="1" class="switcher btn-group"
+                       label="PLG_MEDIATYPE_GRID_GALLERY_SHOW_LABEL"
+                       description="PLG_MEDIATYPE_GRID_GALLERY_SHOW_LABEL">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="tzimagesizelist" name="mt_grid_gallery_size"
+                       addon="grid_gallery"
+                       addon_group="mediatype"
+                       param_name="grid_gallery_size"
+                       param_text="title"
+                       param_value="image_name_prefix"
+                       label="PLG_MEDIATYPE_GRID_GALLERY_SIZE_LABEL">
+                    <option value="o">PLG_MEDIATYPE_GRID_GALLERY_ORIGINAL</option>
+                </field>
+                <field type="list" name="mt_grid_gallery_type"
+                       default="masonry"
+                       label="PLG_MEDIATYPE_GRID_GALLERY_TYPE_LABEL">
+                    <option value="grid">PLG_MEDIATYPE_GRID_GALLERY_GRID</option>
+                    <option value="masonry">PLG_MEDIATYPE_GRID_GALLERY_MASONRY</option>
+                    <option value="horizontal_masonry">PLG_MEDIATYPE_GRID_GALLERY_HORIZONTAL_MASONRY</option>
+                </field>
+                <field type="text" name="mt_grid_gallery_width"
+                       default="400"
+                       label="PLG_MEDIATYPE_GRID_GALLERY_GRID_WIDTH_LABEL"
+                       description="PLG_MEDIATYPE_GRID_GALLERY_GRID_WIDTH_DESC" />
+                <field type="text" name="mt_grid_gallery_height"
+                       default="250"
+                       label="PLG_MEDIATYPE_GRID_GALLERY_GRID_HEIGHT_LABEL"
+                       description="PLG_MEDIATYPE_GRID_GALLERY_GRID_HEIGHT_DESC" />
+
+                <!-- Start related options -->
+                <field type="radio" name="mt_grid_gallery_related_show_image"
+                       class="btn-group" default="1"
+                       label="PLG_MEDIATYPE_GRID_GALLERY_RELATED_SHOW_IMAGE_LABEL">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="tzimagesizelist" name="mt_grid_gallery_related_size"
+                       addon="grid_gallery"
+                       addon_group="mediatype"
+                       param_name="grid_gallery_size"
+                       param_text="title"
+                       param_value="image_name_prefix"
+                       label="PLG_MEDIATYPE_GRID_GALLERY_RELATED_SIZE_LABEL"
+                       description="PLG_MEDIATYPE_GRID_GALLERY_RELATED_SIZE_DESC">
+                    <option value="o">PLG_MEDIATYPE_GRID_GALLERY_ORIGINAL</option>
+                </field>
+                <!-- End related options -->
+                <!-- End article view options -->
+            </fieldset>
+            <!-- End parameters for front-end -->
+        </fields>
+    </config>
+</extension>

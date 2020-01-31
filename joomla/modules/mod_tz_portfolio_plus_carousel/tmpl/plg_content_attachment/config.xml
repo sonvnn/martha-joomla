@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fields name="params">
+        <fieldset name="basic">
+            <field type="spacer" name="spacer_attachment_options"
+                   class="alert alert-warning btn-block"
+                   label="PLG_CONTENT_ATTACHMENT_OPTIONS"/>
+            <field type="radio" name="show_attachment"
+                   default="1" class="btn-group"
+                   label="MOD_TZ_PORTFOLIO_PLUS_CAROUSEL_SHOW_ATTACHMENT_LABEL">
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="radio" name="attachment_enable_awesome_font"
+                   default="1" class="btn-group"
+                   label="PLG_CONTENT_ATTACHMENT_ENABLE_AWESOME_FONT_LABEL">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field type="radio" name="attachment_show_hit"
+                   default="1" class="btn-group"
+                   label="PLG_CONTENT_ATTACHMENT_SHOW_HIT_LABEL">
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="radio" name="attachment_show_icon"
+                   default="1" class="btn-group"
+                   label="PLG_CONTENT_ATTACHMENT_SHOW_ICON_LABEL">
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="list" name="attachment_orderby"
+                   default="rid"
+                   label="PLG_CONTENT_ATTACHMENT_ORDER_BY_LABEL"
+                   description="PLG_CONTENT_ATTACHMENT_ORDER_BY_DESC">
+                <option value="rid">JGLOBAL_MOST_RECENT_FIRST</option>
+                <option value="id">JGLOBAL_OLDEST_FIRST</option>
+                <option value="alpha">JGLOBAL_TITLE_ALPHABETICAL</option>
+                <option value="ralpha">JGLOBAL_TITLE_REVERSE_ALPHABETICAL</option>
+                <option value="hits">PLG_CONTENT_ATTACHMENT_MOST_DOWNLOAD</option>
+                <option value="rhits">PLG_CONTENT_ATTACHMENT_LEAST_DOWNLOAD</option>
+                <option value="ordering">JFIELD_ORDERING_LABEL</option>
+            </field>
+        </fieldset>        ​
+    </fields>
+</form>

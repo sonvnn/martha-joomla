@@ -1,0 +1,22 @@
+// Unite Slider
+@import "../../../../../libraries/jollyany/framework/scss/jollyany/modules/unite-slider";
+.tp-caption {
+  .btn-slider-white {
+    background-color: $white;
+    color: $dark;
+    padding: 8px 30px !important;
+    &:hover {
+      background-color: darken($white, 5%);
+      color: $dark;
+    }
+  }
+  .btn-slider {
+    background-color: $colorMain;
+    color: $white;
+    padding: 8px 30px !important;
+    &:hover {
+      background-color: darken($colorMain, 5%);
+      color: $white;
+    }
+  }
+}

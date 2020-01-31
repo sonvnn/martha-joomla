@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="tz_portfolio_plus-plugin" group="mediatype" method="upgrade">
+    <name>plg_mediatype_image_gallery</name>
+    <author>DuongTVTemPlaza</author>
+    <creationDate>August 2019</creationDate>
+    <copyright>Copyright (C) 2015-2019 TemPlaza. All rights reserved.</copyright>
+    <license>GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html</license>
+    <authorEmail>support@templaza.com</authorEmail>
+    <authorUrl>www.templaza.com/</authorUrl>
+    <version>1.0.7</version>
+    <description>PLG_MEDIATYPE_IMAGE_GALLERY_XML_DESCRIPTION</description>
+
+    <files>
+        <filename plugin="image_gallery">image_gallery.php</filename>
+        <filename>controller.php</filename>
+        <filename>index.html</filename>
+        <folder>admin</folder>
+        <folder>controllers</folder>
+        <folder>css</folder>
+        <folder>fonts</folder>
+        <folder>js</folder>
+        <folder>language</folder>
+        <folder>libraries</folder>
+        <folder>models</folder>
+        <folder>modules</folder>
+        <folder>tmpl</folder>
+        <folder>views</folder>
+    </files>
+
+    <config>
+        <fields name="params" addfieldpath="administrator/components/com_tz_portfolio_plus/models/fields">
+            <!-- Parameters for back-end -->
+            <fieldset name="basic">
+                <field type="text" name="image_gallery_file_size"
+                       default="10"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_MAXIMUM_FILE_SIZE_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_MAXIMUM_FILE_SIZE_DESC"/>
+                <field type="text" name="image_gallery_file_type"
+                       default="bmp,gif,jpg,jpeg,png"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FILE_TYPES_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_FILE_TYPES_DESC"/>
+                <field type="text" name="image_gallery_mime_type"
+                       default="image/jpeg,image/gif,image/png,image/bmp"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_LEGAL_MIME_TYPE_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_LEGAL_MIME_TYPE_DESC"/>
+                <field name="image_gallery_lightbox_option" type="List"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_LIGHTBOX_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_LIGHTBOX_LABEL"
+                       multiple="true"
+                       default="[&quot;zoom&quot;, &quot;slideShow&quot;, &quot;fullScreen&quot;, &quot;thumbs&quot;, &quot;close&quot;]">
+                    <option value="zoom">zoom</option>
+                    <option value="share">share</option>
+                    <option value="slideShow">slideShow</option>
+                    <option value="fullScreen">fullScreen</option>
+                    <option value="download">download</option>
+                    <option value="thumbs">thumbs</option>
+                    <option value="close">close</option>
+                </field>
+                <field type="tzmultiplefield" name="image_gallery_size"
+                       default='{"title":"XSmall","width":"100","image_name_prefix":"xs"},{"title":"Small","width":"200","image_name_prefix":"s"},{"title":"Medium","width":"400","image_name_prefix":"m"},{"title":"Large","width":"600","image_name_prefix":"l"},{"title":"XLarge","width":"900","image_name_prefix":"xl"}'
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_SIZE_LABEL">
+                    <field type="text" name="title" table_required="true"
+                           field_required="true"
+                           label="PLG_MEDIATYPE_IMAGE_GALLERY_TITLE_LABEL"/>
+                    <field type="text" name="width" table_required="true"
+                           field_required="true"
+                           label="PLG_MEDIATYPE_IMAGE_GALLERY_WIDTH_LABEL"/>
+                    <field type="text" name="image_name_prefix" table_required="true"
+                           field_required="true" value_validate="o"
+                           label="PLG_MEDIATYPE_IMAGE_GALLERY_NAME_PREFIX"/>
+                </field>
+            </fieldset>
+            <!-- End parameters for back-end -->
+
+            <!-- Parameters for front-end -->
+            <fieldset name="front_end"
+                      label="PLG_MEDIATYPE_IMAGE_GALLERY_FRONT_END_FIELDSET_LABEL"
+                      description="PLG_MEDIATYPE_IMAGE_GALLERY_CONFIG_SETTINGS_DESC">
+                <field type="radio" name="mt_image_show_feed_image"
+                       class="btn-group" default="1"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_SHOW_FEED_IMAGE_LABEL">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="tzimagesizelist" name="mt_image_feed_size"
+                       addon="image_gallery"
+                       addon_group="mediatype"
+                       param_name="image_gallery_size"
+                       param_text="title"
+                       param_value="image_name_prefix"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FEED_SIZE_LABEL">
+                    <option value="o">PLG_MEDIATYPE_IMAGE_GALLERY_ORIGINAL</option>
+                </field>
+
+                <!-- Start article options in category listings -->
+                <field type="spacer" name="spacer_image_gallery_article_category_listing_hr" hr="true"/>
+                <field type="spacer" name="spacer_image_gallery_article_category_listing_name"
+                       class="alert alert-warning btn-block"
+                       label="COM_TZ_PORTFOLIO_PLUS_SPACER_ARTICLE_OPTIONS_IN_CATEGORY_LISTINGS"/>
+                <field type="tzimagesizelist" name="mt_cat_img_gallery_size"
+                       addon="image_gallery"
+                       addon_group="mediatype"
+                       param_name="image_gallery_size"
+                       param_text="title"
+                       param_value="image_name_prefix"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_SIZE_LABEL">
+                    <option value="o">PLG_MEDIATYPE_IMAGE_GALLERY_ORIGINAL</option>
+                </field>
+                <!-- End article options in category listings -->
+
+                <!-- Start article view options -->
+                <field type="spacer" name="spacer_image_gallery_article_hr" hr="true"/>
+                <field type="spacer" name="spacer_image_gallery_article_name"
+                       class="alert alert-warning btn-block"
+                       label="COM_TZ_PORTFOLIO_PLUS_ATTRIBS_FIELDSET_LABEL"/>
+                <field type="tzimagesizelist" name="mt_img_gallery_size"
+                       addon="image_gallery"
+                       addon_group="mediatype"
+                       param_name="image_gallery_size"
+                       param_text="title"
+                       param_value="image_name_prefix"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_SIZE_LABEL">
+                    <option value="o">PLG_MEDIATYPE_IMAGE_GALLERY_ORIGINAL</option>
+                </field>
+                <field type="tzimagesizelist" name="mt_img_gallery_thumb_size"
+                       addon="image_gallery"
+                       addon_group="mediatype"
+                       param_name="image_gallery_size"
+                       param_text="title"
+                       param_value="image_name_prefix"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_THUMBNAIL_SIZE_LABEL">
+                    <option value="o">PLG_MEDIATYPE_IMAGE_GALLERY_ORIGINAL</option>
+                </field>
+
+                <!-- Start related options -->
+                <field type="radio" name="mt_img_gallery_related_show_image"
+                       class="btn-group" default="1"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_RELATED_SHOW_IMAGE_LABEL">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="tzimagesizelist" name="mt_img_gallery_related_size"
+                       addon="image_gallery"
+                       addon_group="mediatype"
+                       param_name="image_gallery_size"
+                       param_text="title"
+                       param_value="image_name_prefix"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_RELATED_SIZE_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_RELATED_SIZE_DESC">
+                    <option value="o">PLG_MEDIATYPE_IMAGE_GALLERY_ORIGINAL</option>
+                </field>
+                <!-- End related options -->
+                <!-- End article view options -->
+
+                <!-- Start Flexslider options -->
+                <field type="spacer" name="spacer_flexslider" hr="true"/>
+                <field type="spacer" name="spacer_flexslider_name"
+                       class="alert alert-warning btn-block"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_OPTIONS_LABEL"/>
+
+                <field type="radio" name="mt_img_gallery_flex_slideshow"
+                       class="btn-group" default="1"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_SLIDESHOW_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_SLIDESHOW_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="radio" name="mt_img_gallery_flex_show_arrows"
+                       class="btn-group" default="0"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_SHOW_ARROWS_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_SHOW_ARROWS_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field name="mt_img_gallery_flex_show_controlNav"
+                       type="radio" class="btn-group"
+                       default="1"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_SHOW_CONTROLNAV_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_SHOW_CONTROLNAV_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="list" name="mt_img_gallery_flex_controlnav_type"
+                       class="btn-group" default="none"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_CONTROLNAV_TYPE_LABEL">
+                    <option value="none">JDEFAULT</option>
+                    <option value="thumbnails">PLG_MEDIATYPE_IMAGE_GALLERY_THUMBNAILS</option>
+                    <option value="thumbnail_slider">PLG_MEDIATYPE_IMAGE_GALLERY_THUMBNAIL_SLIDER</option>
+                </field>
+                <field type="tzimagesizelist" name="mt_img_gallery_thumb_size"
+                       addon="image_gallery"
+                       addon_group="mediatype"
+                       param_name="image_gallery_size"
+                       param_text="title"
+                       param_value="image_name_prefix"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_THUMBNAIL_SIZE_LABEL">
+                    <option value="o">PLG_MEDIATYPE_IMAGE_GALLERY_ORIGINAL</option>
+                </field>
+                <field type="radio" name="mt_img_gallery_flex_pausePlay"
+                       class="btn-group" default="0"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_PAUSEPLAY_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_PAUSEPLAY_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="radio" name="mt_img_gallery_flex_pauseOnAction"
+                       class="btn-group" default="1"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_PAUSEONACTION_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_PAUSEONACTION_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="radio" name="mt_img_gallery_flex_pauseOnHover"
+                       class="btn-group" default="0"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_PAUSEONHOVER_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_PAUSEONHOVER_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="radio" name="mt_img_gallery_flex_useCSS"
+                       class="btn-group" default="1"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_USECSS_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_USECSS_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="list" name="mt_img_gallery_flex_direction"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_SLIDE_DIRECTION_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_SLIDE_DIRECTION_DESC">
+                    <option value="horizontal">PLG_MEDIATYPE_IMAGE_GALLERY_HORIZONTAL</option>
+                    <option value="vertical">PLG_MEDIATYPE_IMAGE_GALLERY_VERTICAL</option>
+                </field>
+                <field type="list" name="mt_img_gallery_flex_animation"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_AMINATION_LABEL">
+                    <option value="none">PLG_MEDIATYPE_IMAGE_GALLERY_AUTOMATICALLY</option>
+                    <option value="slide">PLG_MEDIATYPE_IMAGE_GALLERY_SLIDE</option>
+                    <option value="fade">PLG_MEDIATYPE_IMAGE_GALLERY_FADE</option>
+                </field>
+                <field type="text" name="mt_img_gallery_flex_animSpeed"
+                       default="7000"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_ANIMSPEED_LABEL"/>
+                <field type="text" name="mt_img_gallery_flex_anim_duration"
+                       default="600"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_DURATION_LABEL"/>
+                <field type="radio" name="mt_img_gallery_flex_animLoop"
+                       class="btn-group" default="1"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_ANIMATION_LOOP_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_ANIMATION_LOOP_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="radio" name="mt_img_gallery_flex_smoothHeight"
+                       class="btn-group" default="1"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_SMOOTH_HEIGHT_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_SMOOTH_HEIGHT_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="radio" name="mt_img_gallery_flex_randomize"
+                       class="btn-group" default="0"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_RANDOMIZE_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_RANDOMIZE_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="text" name="mt_img_gallery_flex_startAt" default="0"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_START_AT_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_START_AT_DESC"/>
+                <!-- Carousel -->
+                <field type="text" name="mt_img_gallery_flex_itemWidth" default="0"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_ITEM_WIDTH_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_ITEM_WIDTH_DESC"/>
+                <field type="text" name="mt_img_gallery_flex_itemMargin" default="0"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_ITEM_MARGIN_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_ITEM_MARGIN_DESC"/>
+                <field type="text" name="mt_img_gallery_flex_minItems" default="0"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_ITEMS_MIN_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_ITEMS_MIN_DESC"/>
+                <field type="text" name="mt_img_gallery_flex_maxItems" default="0"
+                       label="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_ITEMS_MAX_LABEL"
+                       description="PLG_MEDIATYPE_IMAGE_GALLERY_FLEXSLIDER_ITEMS_MAX_DESC"/>
+                <!-- End carousel -->
+                <!-- End Flexslider options -->
+            </fieldset>
+            <!-- End parameters for front-end -->
+        </fields>
+    </config>
+</extension>

@@ -1,0 +1,49 @@
+// Astroid Default
+@import "../../../../libraries/jollyany/framework/scss/jollyany/astroid";
+.astroid-logo img {
+  max-width: 250px;
+  max-height: 18px;
+}
+@media (min-width: 1430px){
+  .container {
+    max-width: 1370px;
+  }
+  .sppb-row-container {
+    width: 1370px;
+  }
+}
+#astroid-header {
+  &.has-sidebar {
+    box-shadow: none;
+  }
+  .astroid-sidebar-content {
+    padding: 40px;
+  }
+  .astroid-sidebar-menu {
+    margin-top: 1em;
+  }
+  @media (max-width: 1600px) {
+    .astroid-sidebar-content {
+      padding: 0px;
+      background-color: $white;
+      box-shadow: 0 0 5px rgba(0,0,0,0.06);
+      border-color: $border-color;
+    }
+    &.expanded {
+      .astroid-sidebar-content {
+        padding: 15px;
+      }
+    }
+  }
+}
+#astroid-footer {
+  font-size: 88%;
+}
+.bottom-module {
+  .astroid-column {
+    margin-bottom: 1rem;
+  }
+}
+.astroid-offcanvas .astroid-offcanvas-inner {
+  padding: 0 1.8rem;
+}

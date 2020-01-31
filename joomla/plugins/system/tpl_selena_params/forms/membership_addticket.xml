@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fields name="params">
+        <fieldset name="basic" addfieldpath="plugins/system/tz_templaza_menu_params/admin/fields">
+            <field type="tzmultifield" name="menu_links"
+                   label="PLG_SYSTEM_TZ_TEMPLAZA_MENU_PARAMS_MENU_LINKS_LABEL">
+                <field type="text" name="title"
+                       table_required="true" field_required="true"
+                       label="JGLOBAL_TITLE"/>
+                <field type="radio" name="link_type"
+                       class="btn-group" default="itemid"
+                       label="PLG_SYSTEM_TZ_TEMPLAZA_MENU_PARAMS_LINK_TYPE_LABEL">
+                    <option value="itemid">PLG_SYSTEM_TZ_TEMPLAZA_MENU_PARAMS_MENU_ITEM_LABEL</option>
+                    <option value="external">PLG_SYSTEM_TZ_TEMPLAZA_MENU_PARAMS_EXTERNAL_LINK_LABEL</option>
+                </field>
+                <field type="menuitem" name="itemId"
+                       showon="link_type:itemid"
+                       label="PLG_SYSTEM_TZ_TEMPLAZA_MENU_PARAMS_MENU_ITEM_LABEL">
+                    <option value="">JOPTION_SELECT_MENU_ITEM</option>
+                </field>
+                <field type="text" name="external"
+                       showon="link_type:external"
+                       label="PLG_SYSTEM_TZ_TEMPLAZA_MENU_PARAMS_EXTERNAL_LINK_LABEL"/>
+                <field type="textarea" name="description"
+                       label="JGLOBAL_DESCRIPTION"/>
+            </field>
+        </fieldset>
+    </fields>
+</form>

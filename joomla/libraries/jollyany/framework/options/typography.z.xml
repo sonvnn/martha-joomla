@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+   <fields name="params">
+      <fieldset icon="fa fa-font" label="ASTROID_OPTIONS_TYPOGRAPHY" name="astroid_typography" addfieldpath="/libraries/astroid/framework/fields" order="5">
+         <field type="astroidgroup" name="top_bar_typography_group" title="TPL_ASTROID_TYPOGRAPHY_TOP_BAR" description="TPL_ASTROID_TYPOGRAPHY_TOP_BAR_DESC" />
+         <field type="astroidgroup" name="footer_typography_group" title="TPL_JOLLYANY_TYPOGRAPHY_FOOTER" description="TPL_JOLLYANY_TYPOGRAPHY_FOOTER_DESC" />
+
+         <!-- Top Bar Typography Options -->
+         <field astroidgroup="top_bar_typography_group" description="TPL_ASTROID_TYPOGRAPHY_OPTION_DESC" name="top_bar_typography" type="astroidradio" default="inherit" label="TPL_ASTROID_TYPOGRAPHY_OPTIONS_LABEL">
+            <option value="inherit">JGLOBAL_INHERIT</option>
+            <option value="custom">TPL_ASTROID_OPTIONS_CUSTOM</option>
+         </field>
+
+         <field astroidgroup="top_bar_typography_group" ngShow="top_bar_typography=='custom'" name="top_bar_typography_options" type="astroidtypography" font-style-picker="false" font-face="Arial, Helvetica, sans-serif" alt-font-face="Arial, Helvetica, sans-serif" font-color="#000" font-size="0.7" font-unit="em" letter-spacing="0" line-height="1" font-weight="500" text-transform="none"></field>
+
+         <!-- Footer Typography Options -->
+         <field astroidgroup="footer_typography_group" description="TPL_ASTROID_TYPOGRAPHY_OPTION_DESC" name="footer_typography" type="astroidradio" default="inherit" label="TPL_ASTROID_TYPOGRAPHY_OPTIONS_LABEL">
+            <option value="inherit">JGLOBAL_INHERIT</option>
+            <option value="custom">TPL_ASTROID_OPTIONS_CUSTOM</option>
+         </field>
+
+         <field astroidgroup="footer_typography_group" ngShow="footer_typography=='custom'" name="footer_typography_options" type="astroidtypography" font-style-picker="false" font-face="Arial, Helvetica, sans-serif" alt-font-face="Arial, Helvetica, sans-serif" font-color="#000" font-size="0.88" font-unit="em" letter-spacing="0" line-height="1" font-weight="400" text-transform="none"></field>
+      </fieldset>
+   </fields>
+</form>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <!-- Parameters for article's create or edit view -->
+    <fields name="attribs">
+        <!-- Start article options in category listings -->
+        <fieldset name="article_category_listing">
+            <field type="spacer" name="spacer_flipbook_gallery_article_category_listing_hr" hr="true"/>
+            <field type="spacer" name="spacer_flipbook_gallery_article_category_listing_name"
+                   class="alert alert-warning btn-block"
+                   label="PLG_MEDIATYPE_FLIPBOOK_GALLERY_OPTIONS_LABEL"/>
+            <field type="list" name="mt_cat_flipbook_gallery_show"
+                   default=""
+                   label="PLG_MEDIATYPE_FLIPBOOK_GALLERY_SHOW_LABEL"
+                   description="PLG_MEDIATYPE_FLIPBOOK_GALLERY_SHOW_LABEL">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="tzimagesizelist" name="mt_cat_flipbook_gallery_size"
+                   addon="flipbook_gallery"
+                   addon_group="mediatype"
+                   param_name="flipbook_gallery_size"
+                   param_text="title"
+                   param_value="image_name_prefix"
+                   label="PLG_MEDIATYPE_FLIPBOOK_GALLERY_SIZE_LABEL">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="o">PLG_MEDIATYPE_FLIPBOOK_GALLERY_ORIGINAL</option>
+            </field>
+        </fieldset>
+        <!-- End article options in category listings -->
+
+        <!-- Start article options -->
+        <fieldset name="article">
+            <field type="spacer" name="spacer_flipbook_gallery_article_hr" hr="true"/>
+            <field type="spacer" name="spacer_flipbook_gallery_article_name"
+                   class="alert alert-warning btn-block"
+                   label="PLG_MEDIATYPE_FLIPBOOK_GALLERY_OPTIONS_LABEL"/>
+            <field type="list" name="mt_flipbook_gallery_show"
+                   default=""
+                   label="PLG_MEDIATYPE_FLIPBOOK_GALLERY_SHOW_LABEL"
+                   description="PLG_MEDIATYPE_FLIPBOOK_GALLERY_SHOW_LABEL">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="tzimagesizelist" name="mt_flipbook_gallery_size"
+                   addon="flipbook_gallery"
+                   addon_group="mediatype"
+                   param_name="flipbook_gallery_size"
+                   param_text="title"
+                   param_value="image_name_prefix"
+                   label="PLG_MEDIATYPE_FLIPBOOK_GALLERY_SIZE_LABEL">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="o">PLG_MEDIATYPE_FLIPBOOK_GALLERY_ORIGINAL</option>
+            </field>
+
+            <field type="text" name="mt_flipbook_gallery_width"
+                   default=""
+                   label="PLG_MEDIATYPE_FLIPBOOK_GALLERY_WIDTH_LABEL"
+                   description="PLG_MEDIATYPE_FLIPBOOK_GALLERY_WIDTH_DESC" />
+            <field type="text" name="mt_flipbook_gallery_height"
+                   default=""
+                   label="PLG_MEDIATYPE_FLIPBOOK_GALLERY_HEIGHT_LABEL"
+                   description="PLG_MEDIATYPE_FLIPBOOK_GALLERY_HEIGHT_DESC" />
+            <field type="text" name="mt_flipbook_gallery_ratio"
+                   default=""
+                   label="PLG_MEDIATYPE_FLIPBOOK_GALLERY_RATIO_LABEL"
+                   description="PLG_MEDIATYPE_FLIPBOOK_GALLERY_RATIO_DESC" />
+            <field type="list" name="mt_flipbook_gallery_direction"
+                   label="PLG_MEDIATYPE_FLIPBOOK_GALLERY_DIRECTION_LABEL">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="LTR">PLG_MEDIATYPE_FLIPBOOK_GALLERY_LTR</option>
+                <option value="RTL">PLG_MEDIATYPE_FLIPBOOK_GALLERY_RTL</option>
+            </field>
+            <field type="text" name="mt_flipbook_gallery_padding"
+                   default=""
+                   label="PLG_MEDIATYPE_FLIPBOOK_GALLERY_PADDING_LABEL" />
+            <field type="list" name="mt_flipbook_gallery_show_arrow"
+                   label="PLG_MEDIATYPE_FLIPBOOK_GALLERY_ARROW_LABEL">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="list" name="mt_flipbook_gallery_show_page_selector"
+                   label="PLG_MEDIATYPE_FLIPBOOK_GALLERY_PAGE_LABEL">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="list" name="mt_flipbook_gallery_show_cover_page"
+                   label="PLG_MEDIATYPE_FLIPBOOK_GALLERY_COVER_PAGE_LABEL">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+
+            <!-- Start related options -->
+            <field type="list" name="mt_flipbook_gallery_related_show_image"
+                   label="PLG_MEDIATYPE_FLIPBOOK_GALLERY_RELATED_SHOW_IMAGE_LABEL">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="tzimagesizelist" name="mt_flipbook_gallery_related_size"
+                   addon="flipbook_gallery"
+                   addon_group="mediatype"
+                   param_name="flipbook_gallery_size"
+                   param_text="title"
+                   param_value="image_name_prefix"
+                   label="PLG_MEDIATYPE_FLIPBOOK_GALLERY_RELATED_SIZE_LABEL"
+                   description="PLG_MEDIATYPE_FLIPBOOK_GALLERY_RELATED_SIZE_DESC">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="o">PLG_MEDIATYPE_FLIPBOOK_GALLERY_ORIGINAL</option>
+            </field>
+            <!-- End related options -->
+        </fieldset>
+        <!-- End article options -->
+    </fields>
+    <!-- End parameters for article's create or edit view -->
+</form>

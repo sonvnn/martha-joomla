@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <!-- Parameters for article's create or edit view -->
+    <fields name="attribs">
+        <!-- Start article options in category listings -->
+        <fieldset name="article_category_listing">
+            <field type="spacer" name="spacer_grid_gallery_article_category_listing_hr" hr="true"/>
+            <field type="spacer" name="spacer_grid_gallery_article_category_listing_name"
+                   class="alert alert-warning btn-block"
+                   label="PLG_MEDIATYPE_GRID_GALLERY_OPTIONS_LABEL"/>
+            <field type="list" name="mt_cat_grid_gallery_show"
+                   default=""
+                   label="PLG_MEDIATYPE_GRID_GALLERY_SHOW_LABEL"
+                   description="PLG_MEDIATYPE_GRID_GALLERY_SHOW_LABEL">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="tzimagesizelist" name="mt_cat_grid_gallery_size"
+                   addon="grid_gallery"
+                   addon_group="mediatype"
+                   param_name="grid_gallery_size"
+                   param_text="title"
+                   param_value="image_name_prefix"
+                   label="PLG_MEDIATYPE_GRID_GALLERY_SIZE_LABEL">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="o">PLG_MEDIATYPE_GRID_GALLERY_ORIGINAL</option>
+            </field>
+        </fieldset>
+        <!-- End article options in category listings -->
+
+        <!-- Start article options -->
+        <fieldset name="article">
+            <field type="spacer" name="spacer_grid_gallery_article_hr" hr="true"/>
+            <field type="spacer" name="spacer_grid_gallery_article_name"
+                   class="alert alert-warning btn-block"
+                   label="PLG_MEDIATYPE_GRID_GALLERY_OPTIONS_LABEL"/>
+            <field type="list" name="mt_grid_gallery_show"
+                   default=""
+                   label="PLG_MEDIATYPE_GRID_GALLERY_SHOW_LABEL"
+                   description="PLG_MEDIATYPE_GRID_GALLERY_SHOW_LABEL">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="tzimagesizelist" name="mt_grid_gallery_size"
+                   addon="grid_gallery"
+                   addon_group="mediatype"
+                   param_name="grid_gallery_size"
+                   param_text="title"
+                   param_value="image_name_prefix"
+                   label="PLG_MEDIATYPE_GRID_GALLERY_SIZE_LABEL">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="o">PLG_MEDIATYPE_GRID_GALLERY_ORIGINAL</option>
+            </field>
+
+            <field type="list" name="mt_grid_gallery_type"
+                   default=""
+                   label="PLG_MEDIATYPE_GRID_GALLERY_TYPE_LABEL">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="grid">PLG_MEDIATYPE_GRID_GALLERY_GRID</option>
+                <option value="masonry">PLG_MEDIATYPE_GRID_GALLERY_MASONRY</option>
+                <option value="horizontal_masonry">PLG_MEDIATYPE_GRID_GALLERY_HORIZONTAL_MASONRY</option>
+            </field>
+            <field type="text" name="mt_grid_gallery_width"
+                   default=""
+                   label="PLG_MEDIATYPE_GRID_GALLERY_GRID_WIDTH_LABEL"
+                   description="PLG_MEDIATYPE_GRID_GALLERY_GRID_WIDTH_DESC" />
+            <field type="text" name="mt_grid_gallery_height"
+                   default=""
+                   label="PLG_MEDIATYPE_GRID_GALLERY_GRID_HEIGHT_LABEL"
+                   description="PLG_MEDIATYPE_GRID_GALLERY_GRID_HEIGHT_DESC" />
+
+            <!-- Start related options -->
+            <field type="list" name="mt_grid_gallery_related_show_image"
+                   label="PLG_MEDIATYPE_GRID_GALLERY_RELATED_SHOW_IMAGE_LABEL">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="tzimagesizelist" name="mt_grid_gallery_related_size"
+                   addon="grid_gallery"
+                   addon_group="mediatype"
+                   param_name="grid_gallery_size"
+                   param_text="title"
+                   param_value="image_name_prefix"
+                   label="PLG_MEDIATYPE_GRID_GALLERY_RELATED_SIZE_LABEL"
+                   description="PLG_MEDIATYPE_GRID_GALLERY_RELATED_SIZE_DESC">
+                <option value="">COM_TZ_PORTFOLIO_PLUS_OPTION_INHERIT_FROM_CATEGORY</option>
+                <option value="o">PLG_MEDIATYPE_GRID_GALLERY_ORIGINAL</option>
+            </field>
+            <!-- End related options -->
+        </fieldset>
+        <!-- End article options -->
+    </fields>
+    <!-- End parameters for article's create or edit view -->
+</form>

@@ -1,0 +1,83 @@
+// TZ Portfolio Default
+@import "../../../../../libraries/jollyany/framework/scss/jollyany/modules/tz-portfolio";
+.flexslider {
+  border: none;
+  background: transparent;
+}
+.tpItemPage .pager li a {
+  background: $white;
+}
+.tpp-module-carousel {
+  .btn-primary {
+    background-color: $colorMain;
+    border-color: $colorMain;
+    color: $white;
+  }
+}
+.tz_portfolio_plus_grid_gallery .gallery-image {
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+}
+
+.tplArtGallery .tp-item-box-container .tpPortfolioDescription .tpInfo .TzPortfolioTitle a {
+  color: inherit;
+}
+.tz-flex-grid {
+  .tz-flex-items {
+    padding: 0;
+    margin: 0 -20px;
+  }
+  .tz-flex-item {
+    margin: 20px;
+    &:hover {
+      .tz-flex-grid-content {
+        opacity: 0.8;
+      }
+    }
+  }
+  .tz-flex-grid-content {
+    background: linear-gradient(to bottom left, $colorMain1 0%, $colorMain 100%) !important;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    a {
+      color: $white;
+    }
+  }
+  .tz-flex-lightbox {
+    margin-bottom: 1rem;
+  }
+}
+.tpBlog, .tpSearch {
+  >.pagination {
+    margin-top: 1.8rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .TzItemsRow .TzItem {
+    background-color: $white;
+    box-shadow: 0 0 30px rgba(74, 74, 174, 0.1);
+    .tpHead, .tpBody {
+      padding: 1.8rem;
+      border-color: $border-color;
+    }
+  }
+}
+.tpCategories {
+  .tpCategoryRow {
+    margin: 0 0 1.8rem;
+  }
+  .tpCategory {
+    background-color: $white;
+    box-shadow: 0 0 30px rgba(74, 74, 174, 0.1);
+    border-radius: 0.5rem;
+  }
+}
+.tpSearch #searchForm .form-group {
+  .form-control {
+    border-color: $border-color;
+    padding: 1rem;
+  }
+  button {
+    padding: 1rem;
+  }
+}

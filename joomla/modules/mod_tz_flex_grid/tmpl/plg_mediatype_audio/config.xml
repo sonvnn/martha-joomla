@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="params">
+        <fieldset name="mediatype_audio"
+                  label="PLG_MEDIATYPE_AUDIO_FIELDSET_LABEL">
+            <field type="radio" name="mt_audio_switcher"
+                   default="thumbnail" class="btn-group"
+                   label="PLG_MEDIATYPE_AUDIO_SWITCHER_LABEL">
+                <option value="thumbnail">PLG_MEDIATYPE_AUDIO_THUMBNAIL_LABEL</option>
+                <option value="audio">PLG_MEDIATYPE_AUDIO_TITLE</option>
+            </field>
+            <field type="tzimagesizelist" addon="audio"
+                   addon_group="mediatype"
+                   param_name="audio_thumbnail_size"
+                   param_text="title"
+                   param_value="image_name_prefix"
+                   name="mt_audio_thumbnail_size"
+                   label="PLG_MEDIATYPE_AUDIO_SIZE_LABEL">
+                <option value="o">PLG_MEDIATYPE_AUDIO_ORIGINAL</option>
+            </field>
+
+            <!-- Start soundcloud options -->
+            <field type="spacer" name="spacer_soundcloud" hr="true"/>
+            <field type="spacer" name="spacer_soundcloud_name"
+                   class="alert alert-warning btn-block"
+                   label="PLG_MEDIATYPE_AUDIO_SOUNDCLOUD_OPTIONS_LABEL"/>
+
+            <field type="list" name="mt_audio_show_soundcloud_artwork"
+                   label="PLG_MEDIATYPE_AUDIO_SHOW_SOUNDCLOUD_ARTWORK_LABEL">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="list" name="mt_audio_soundcloud_auto_play"
+                   label="PLG_MEDIATYPE_AUDIO_SOUNDCLOUD_AUTO_PLAY_LABEL"
+                   description="PLG_MEDIATYPE_AUDIO_SOUNDCLOUD_AUTO_PLAY_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field type="list" name="mt_audio_show_soundcloud_sharing"
+                   label="PLG_MEDIATYPE_AUDIO_SHOW_SOUNDCLOUD_SHARING_LABEL">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="list" name="mt_audio_show_soundcloud_buying"
+                   label="PLG_MEDIATYPE_AUDIO_SHOW_SOUNDCLOUD_BUYING_LABEL">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="list" name="mt_audio_show_soundcloud_download"
+                   label="PLG_MEDIATYPE_AUDIO_SHOW_SOUNDCLOUD_DOWNLOAD_LABEL">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="list" name="mt_audio_show_soundcloud_user"
+                   label="PLG_MEDIATYPE_AUDIO_SHOW_SOUNDCLOUD_USER_LABEL">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="list" name="mt_audio_show_soundcloud_playcount"
+                   label="PLG_MEDIATYPE_AUDIO_SHOW_SOUNDCLOUD_PLAYCOUNT_LABEL">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="list" name="mt_audio_show_soundcloud_comments"
+                   label="PLG_MEDIATYPE_AUDIO_SHOW_SOUNDCLOUD_COMMENTS_LABEL">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="color" name="mt_audio_soundcloud_color"
+                   label="PLG_MEDIATYPE_AUDIO_SOUNDCLOUD_COLOR_LABEL"
+                   description="PLG_MEDIATYPE_AUDIO_SOUNDCLOUD_COLOR_DESC"/>
+            <field type="color" name="mt_audio_soundcloud_theme_color"
+                   label="PLG_MEDIATYPE_AUDIO_SOUNDCLOUD_THEME_COLOR_LABEL"
+                   description="PLG_MEDIATYPE_AUDIO_SOUNDCLOUD_THEME_COLOR_DESC"/>
+            <field type="text" name="mt_audio_soundcloud_width"
+                   label="PLG_MEDIATYPE_AUDIO_SOUNDCLOUD_WIDTH_LABEL"/>
+            <field type="text" name="mt_audio_soundcloud_height"
+                   label="PLG_MEDIATYPE_AUDIO_SOUNDCLOUD_HEIGHT_LABEL"/>
+            <!-- End soundcloud options -->
+        </fieldset>
+    </fields>
+</form>

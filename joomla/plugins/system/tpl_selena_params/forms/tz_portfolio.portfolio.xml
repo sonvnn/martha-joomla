@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fields name="params">
+        <fieldset name="tz_fieldset_basic">
+            <field type="radio" name="show_list_release_date"
+                   default="0" class="btn-group"
+                   label="PLG_SYSTEM_TZ_TEMPLAZA_MENU_PARAMS_SHOW_LIST_RELEASE_DATE_LABEL">
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="radio" name="show_list_version"
+                   default="0" class="btn-group"
+                   label="PLG_SYSTEM_TZ_TEMPLAZA_MENU_PARAMS_SHOW_LIST_VERSION_LABEL">
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="radio" name="show_list_price"
+                   default="0" class="btn-group"
+                   label="PLG_SYSTEM_TZ_TEMPLAZA_MENU_PARAMS_SHOW_LIST_PRICE_LABEL">
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="radio" name="show_list_p_hot"
+                   default="0"
+                   class="btn-group"
+                   label="PLG_SYSTEM_TZ_TEMPLAZA_MENU_PARAMS_SHOW_PROJECT_HOT_BADGES_LABEL">
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field type="text" name="p_hot_number"
+                   default="0"
+                   label="PLG_SYSTEM_TZ_TEMPLAZA_MENU_PARAMS_PROJECT_HOT_NUMBER_LABEL"/>
+        </fieldset>
+    </fields>
+</form>

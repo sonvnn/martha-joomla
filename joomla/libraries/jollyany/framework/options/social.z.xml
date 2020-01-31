@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fields name="params">
+		<fieldset icon="fas fa-share-alt" label="ASTROID_OPTIONS_SOCIAL" name="astroid_social" addfieldpath="/libraries/astroid/framework/fields" order="7">
+
+			<field astroidgroup="social_profile" ngShow="social_profiles_style=='1'" description="TPL_ASTROID_SOCIAL_COLOR_DESC" name="social_icon_color" type="astroidcolor" large="true" label="TPL_ASTROID_SOCIAL_COLOR_LABEL">
+			</field>
+
+			<field astroidgroup="social_profile" ngShow="social_profiles_style=='1'" description="TPL_ASTROID_SOCIAL_COLOR_HOVER_DESC" name="social_icon_color_hover" type="astroidcolor" large="true" label="TPL_ASTROID_SOCIAL_COLOR_HOVER_LABEL">
+			</field>
+
+		</fieldset>
+	</fields>
+</form>

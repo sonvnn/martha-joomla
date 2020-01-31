@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "https://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension type="package" version="3.1" method="upgrade">
+   <name>New Age Package</name>
+   <packagename>jollyany</packagename>
+   <packager>TemPlaza</packager>
+   <packagerurl>https://jollyany.co/</packagerurl>
+   <author>TemPlaza</author>
+   <creationDate>January 2020</creationDate>
+   <version>1.0.3</version>
+   <url>https://jollyany.co/</url>
+   <copyright>Copyright (C) 2019 TemPlaza, JSC. All rights reserved.</copyright>
+   <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+   <authorEmail>info@templaza.com</authorEmail>
+   <authorUrl>https://www.templaza.com</authorUrl>
+   <description></description>
+   <scriptfile>pkg_jollyany.php</scriptfile>
+   <files folder="jollyany">
+      <folder type="library" id="jollyany" client="site">jollyany-framework</folder>
+      <folder type="library" id="astroid" client="site">astroid-framework</folder>
+      <folder type="template" id="tz_new_age" client="site">tz-new-age</folder>
+   </files>
+</extension>

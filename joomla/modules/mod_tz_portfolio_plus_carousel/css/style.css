@@ -1,0 +1,49 @@
+.tpp-module__carousel .item{
+    padding: 15px;
+    border: 1px solid #f4f4f4;
+}
+.tpp-module-meta{
+    font-size: 85%;
+}
+.tpp-module-description{
+    margin-top: 15px;
+}
+.tpp-module-readmore{
+    margin-top: 15px;
+}
+.tpp-module-readmore .btn{
+    padding-top: 6px;
+    padding-bottom: 6px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #ebebeb;
+}
+.tz-extrafields {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+}
+.tz_extrafield-item {
+    list-style: none;
+    display: block;
+    padding: 5px 0;
+    overflow: hidden;
+    border-bottom: 1px solid #ebebeb;
+}
+.tz-extrafields .tz_extrafield-item:last-child {
+    border-bottom: none;
+}
+.tz_extrafield-label {
+    clear: both;
+    display: block;
+    float: left;
+    font-weight: bold;
+    width: 30%;
+}
+.tpp-module-carousel .btn-view-all{
+    padding: 6px 20px;
+}
+.tpp-module-carousel .tpp-portfolio__action{
+    margin-top: 10px;
+}

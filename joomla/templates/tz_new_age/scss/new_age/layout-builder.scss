@@ -1,0 +1,23 @@
+// Layout Builder Default
+@import "../../../../libraries/jollyany/framework/scss/jollyany/layout-builder";
+.py-breadcrumb {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.py-bottom {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.bottom-module {
+  a {
+    color: $dark;
+  }
+  .menu-module {
+    line-height: 1.9;
+    font-size: 98%;
+  }
+  .module-title {
+    font-size: 1.7em;
+
+  }
+}

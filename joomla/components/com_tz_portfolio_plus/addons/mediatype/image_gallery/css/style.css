@@ -1,0 +1,29 @@
+.flex-direction-nav a{
+    line-height: 40px;
+}
+a.image-gallery-zoom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a.image-gallery-zoom i {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 250ms ease-in-out;
+}
+a.image-gallery-zoom:hover i {
+    opacity: 1;
+}
+.tz_portfolio_plus_image_gallery .flexslider .slides > li{
+    position: relative;
+}
