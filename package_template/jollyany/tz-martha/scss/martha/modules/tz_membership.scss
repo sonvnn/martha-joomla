@@ -1,0 +1,19 @@
+.tz_membership_download {
+  .card-title a {
+    font-weight: 600;
+    color: inherit;
+  }
+  .products {
+    >div+div {
+      margin-top: 1rem;
+    }
+    .card-subtitle {
+      font-size: 95%;
+    }
+  }
+}
+.tz_membership {
+  .product-logo {
+    min-width: 152px;
+  }
+}

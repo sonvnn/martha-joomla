@@ -1,0 +1,16 @@
+// Module Breadcrumbs Default
+@import "../../../../../libraries/jollyany/framework/scss/jollyany/modules/mod_breadcrumbs";
+.mod_breadcrumbs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .breadcrumb {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .heading-title-page {
+    font-size: 4rem;
+    text-align: center;
+  }
+}

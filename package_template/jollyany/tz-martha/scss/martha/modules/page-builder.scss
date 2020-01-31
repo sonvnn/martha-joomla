@@ -1,0 +1,248 @@
+// Page Builder Default
+@import "../../../../../libraries/jollyany/framework/scss/jollyany/modules/page-builder";
+.sppb-btn-primary {
+  color: $white;
+}
+.header-gradient {
+  position: relative;
+  h1,h2,h3,h4,h5,h6 {
+    color: #ffffff;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(74,74,174);
+    background: linear-gradient(180deg, rgba(74,74,174,1) 0%, rgba(115,89,136,0.8) 40%, rgba(176,107,83,0.4) 60%, rgba(236,125,0,0) 80%);
+  }
+}
+.mousey {
+  width: 3px;
+  padding: 10px 13px;
+  height: 35px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+  display: block;
+}
+.scroller {
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: #fff;
+  animation-name: scroll;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+  animation-iteration-count: infinite;
+}
+@keyframes scroll {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0;}
+}
+.sppb-text-center .mousey {
+  margin-left: auto;
+  margin-right: auto;
+}
+.sppb-text-right .mousey {
+  margin-left: auto;
+  margin-right: 0;
+}
+.sppb-text-left .mousey {
+  margin-left: 0;
+  margin-right: auto;
+}
+.sppb-addon-feature {
+  &.card {
+    border: none;
+    .sppb-addon-content {
+      padding: 20px;
+    }
+  }
+}
+.sppb-gallery-parallax {
+  width: 100%;
+  height: auto;
+  position: relative;
+  img {
+    position: absolute;
+    border-radius: 10px;
+  }
+  &:after {
+    content: '.';
+    height: 500px;
+    display: block;
+    opacity: 0;
+  }
+}
+.sppb-testimonial-carousel {
+  .sppb-carousel-list {
+    position: relative;
+    width: 100%;
+  }
+  .sppb-slider-item {
+    width: 85%;
+    border-radius: 10px;
+    background-color: #ffffff;
+    position: absolute;
+    opacity: 1;
+    z-index: 0;
+    box-shadow: 0 4px 9px #f1f1f4;
+    left: 0;
+    top: 0;
+  }
+  .sppb-slider-item-inner {
+    position: relative;
+    padding: 2.5rem;
+  }
+  .quote-icon {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+  }
+}
+.sppb-addon-person {
+  .sppb-person-image img {
+    max-width: 180px;
+  }
+}
+.sppb-title-heading {
+  span {
+    display: block;
+    color: $colorMain;
+    font-size: 50%;
+    font-weight: 200;
+    text-transform: uppercase;
+  }
+}
+.sppb-addon-header, .sppb-addon-text-block {
+  .sppb-addon-title{
+    >span {
+      background-color: transparent;
+      padding: 0;
+      display: block;
+      color: $colorMain;
+      font-size: 50%;
+      font-weight: 200;
+      text-transform: uppercase;
+    }
+  }
+}
+.sppb-addon-clients {
+  img {
+    opacity: 0.5;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+.sppb-addon-articles .sppb-addon-article {
+  .sppb-img-responsive {
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  h3 {
+    font-size: 24px;
+  }
+}
+.sppb-pricing-box {
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(74, 74, 174, 0.1);
+  border: none;
+  .sppb-pricing-header .sppb-pricing-title {
+    position: relative;
+    top: 0;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    display: block;
+  }
+}
+.sppb-addon-pricing-table {
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.badge-featured {
+  overflow: hidden;
+  &:before {
+    content: "Featured";
+    background-color: peru;
+    transform: rotate(45deg);
+    position: absolute;
+    right: -92px;
+    top: 42px;
+    text-align: center;
+    width: 300px;
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: white;
+    font-weight: 600;
+  }
+  &.badge-hot {
+    &:before {
+      content: "Hot";
+      background-color: orangered;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+  &.badge-new {
+    &:before {
+      content: "New";
+      background-color: green;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+  &.badge-sale {
+    &:before {
+      content: "Sale OFF";
+      background-color: deeppink;
+      letter-spacing: 1px;
+    }
+    &.sale-20 {
+      &:before {
+        content: "20% OFF";
+      }
+    }
+    &.sale-25 {
+      &:before {
+        content: "25% OFF";
+      }
+    }
+    &.sale-30 {
+      &:before {
+        content: "30% OFF";
+      }
+    }
+    &.sale-35 {
+      &:before {
+        content: "35% OFF";
+      }
+    }
+    &.sale-40 {
+      &:before {
+        content: "40% OFF";
+      }
+    }
+    &.sale-45 {
+      &:before {
+        content: "45% OFF";
+      }
+    }
+    &.sale-50 {
+      &:before {
+        content: "50% OFF";
+      }
+    }
+  }
+}
