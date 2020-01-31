@@ -1,0 +1,56 @@
+// Basic Default
+@import "../../../../libraries/jollyany/framework/scss/jollyany/basic";
+.card {
+  box-shadow: 0 0 30px rgba(74,74,174,0.1);
+}
+.max-width-900 {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.max-width-1000 {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.z-index-background {
+  z-index: -1;
+}
+ul.check-list {
+  list-style: none;
+  padding-left: 0;
+  > li {
+    &:before {
+      font-family: "Font Awesome 5 Free";
+      -webkit-font-smoothing: antialiased;
+      font-weight: 900;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+      content: "\f00c";
+      margin-right: .8rem;
+    }
+  }
+  &.orangered {
+    >li {
+      &:before {
+        color: orangered;
+      }
+    }
+  }
+}
+select {
+  border-color: $border-color;
+}
+@media (min-width: map-get($grid-breakpoints, "lg")) {
+  .margin-left-auto-md {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+  .margin-right-auto-md {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+}

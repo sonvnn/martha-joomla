@@ -1,0 +1,21 @@
+// Module Menu Default
+@import "../../../../../libraries/jollyany/framework/scss/jollyany/modules/mod_menu";
+.sidebar {
+  .menu-module.nav > li {
+    > a {
+      border: none;
+      padding: 5px 0;
+      &:hover {
+        background-color: transparent;
+        color: $colorMain;
+      }
+    }
+    &.active {
+      > a {
+        background-color: transparent;
+        color: $colorMain;
+      }
+    }
+  }
+
+}

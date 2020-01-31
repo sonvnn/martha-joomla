@@ -25,7 +25,6 @@ class pkg_jollyanyInstallerScript {
     */
    public function install($parent) {
       $this->getJoomlaVersion();
-      $this->removeUnnecessary();
       $this->displayAstroidWelcome($parent);
    }
 
@@ -44,7 +43,6 @@ class pkg_jollyanyInstallerScript {
     * @return void
     */
    function update($parent) {
-	   $this->removeUnnecessary();
       $this->displayAstroidWelcome($parent);
    }
 
@@ -61,65 +59,6 @@ class pkg_jollyanyInstallerScript {
       $version = $version->getShortVersion();
       $version = substr($version, 0, 1);
       define('ASTROID_JOOMLA_VERSION', $version);
-   }
-
-   public function removeUnnecessary() {
-	   $removefile  =   array(
-		   'frontend/backtotop.php',
-		   'frontend/colors.php',
-		   'frontend/comingsoon.php',
-		   'frontend/contactinfo.php',
-		   'frontend/custom.php',
-		   'frontend/dropdownmenumodule.php',
-		   'frontend/footer.php',
-		   'frontend/header.php',
-		   'frontend/hikashop.php',
-		   'frontend/joomlalogin.php',
-		   'frontend/language.php',
-		   'frontend/menumodule.php',
-		   'frontend/mobilemenu.php',
-		   'frontend/offcanvas.php',
-		   'frontend/preloader.php',
-		   'frontend/social.php',
-		   'frontend/typography.php',
-		   'frontend/blog/modules/author_info.php',
-		   'frontend/blog/modules/badge.php',
-		   'frontend/blog/modules/comments.php',
-		   'frontend/blog/modules/image.php',
-		   'frontend/blog/modules/posttype.php',
-		   'frontend/blog/modules/rating.php',
-		   'frontend/blog/modules/readtime.php',
-		   'frontend/blog/modules/related.php',
-		   'frontend/blog/modules/social.php',
-		   'frontend/blog/audio.php',
-		   'frontend/blog/gallery.php',
-		   'frontend/blog/quote.php',
-		   'frontend/blog/review.php',
-		   'frontend/blog/video.php',
-		   'frontend/header/horizontal.php',
-		   'frontend/header/stacked.php',
-		   'frontend/header/sticky.php',
-		   'frontend/header/sidebar.php',
-		   'frontend/header/sidebar.php',
-		   'astroid/options/article.xml',
-		   'astroid/options/basic.xml',
-		   'astroid/options/custom.xml',
-		   'astroid/options/footer.xml',
-		   'astroid/options/header.xml',
-		   'astroid/options/layout.xml',
-		   'astroid/options/social.xml',
-		   'astroid/options/theming.xml',
-		   'astroid/options/typography.xml',
-		   'astroid/options/colors.xml',
-		   'astroid/options/dashboard.xml',
-		   'astroid/options/extensions.xml',
-	   );
-	   jimport('joomla.filesystem.file');
-	   foreach ($removefile as $file) {
-		   if (JFile::exists(JPATH_ROOT.'/templates/tz_new_age/'.$file)) {
-			   JFile::delete(JPATH_ROOT.'/templates/tz_new_age/'.$file);
-		   }
-	   }
    }
 
    /**
@@ -230,12 +169,12 @@ class pkg_jollyanyInstallerScript {
          }
       </style>
        <div class="astroid-install">
-           <img src="<?php echo JURI::root() . 'templates/tz_new_age/images/default/new-age-logo.png'; ?>" alt="astroid-logo" />
+           <img src="<?php echo JURI::root() . 'templates/tz_martha/images/default/new-age-logo.png'; ?>" alt="astroid-logo" />
            <div class="install-message">
-               <h3>New Age | Creative Agency Joomla Template
+               <h3>Martha | Photography, Portfolio Joomla Template
                    <span>v <?php echo $parent->get('manifest')->version; ?></span>
                </h3>
-               <p>New Age is a creative and modern Joomla template for company, corporation, start-up, portfolio, blog, mini-shop and social network. The template supports SP Page Builder TZ Portfolio, EasyBlog, EasySocial and Hikashop to help to build a fully functional website. New Age also supports video, gallery page and all default Joomla pages with customized style.</p>
+               <p>Martha is a creative and modern Joomla template for company, corporation, start-up, portfolio, blog, mini-shop and social network. The template supports SP Page Builder TZ Portfolio, EasyBlog, EasySocial and Hikashop to help to build a fully functional website. New Age also supports video, gallery page and all default Joomla pages with customized style.</p>
            </div>
            <div class="astroid-install-actions">
                <a href="index.php?option=com_templates" class="btn btn-default">Get started</a>

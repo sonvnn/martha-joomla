@@ -1,0 +1,155 @@
+// EasyDiscuss Default
+@import "../../../../../libraries/jollyany/framework/scss/jollyany/modules/easydiscuss";
+#ed {
+  font-family: inherit;
+  .ed-post-item {
+    box-shadow: 0 0 30px rgba(74, 74, 174, 0.1);
+    border-radius: 5px;
+  }
+  .ed-post-item__hd {
+    border: none;
+    padding: 2rem;
+    align-items: center;
+  }
+  .has-body .ed-post-item__bd {
+    border: none;
+    padding: 2rem;
+  }
+  .ed-cat-panel {
+    border: none;
+    box-shadow: 0 0 30px rgba(74, 74, 174, 0.1);
+    padding: 1rem;
+  }
+  .ed-cat-item .o-flag {
+    padding-top: 0;
+  }
+  .ed-tag {
+    background: white;
+    box-shadow: 0 0 7px rgba(74, 74, 174, 0.1);
+  }
+  .ed-badges__item {
+    background: transparent;
+  }
+  .ed-badge {
+    background: white;
+    border: none;
+    box-shadow: 0 0 7px rgba(74, 74, 174, 0.1);
+    padding: 1.2rem;
+  }
+  .ed-user-name {
+    display: inline;
+  }
+  .ed-post-item__ft, .ed-post-item__sub-hd, .ed-post-who-view__ft, .ed-post-who-view__hd, .ed-reply-item__hd, .ed-reply-item__bd, .ed-reply-item__comments-wrap, .ed-reply-item__ft {
+    border: none;
+  }
+  .ed-post-item__ft {
+    padding: 2rem;
+  }
+  .ed-post-who-view {
+    box-shadow: 0 0 30px rgba(74, 74, 174, 0.1);
+  }
+  .ed-reply-item {
+    background-color: $white;
+    box-shadow: 0 0 30px rgba(74, 74, 174, 0.1);
+  }
+  .ed-reply-item__hd, .ed-reply-item__comments-wrap {
+    padding: 2rem;
+  }
+  .ed-post-item__sub-hd {
+    padding: 1rem 2rem;
+  }
+  .o-label {
+    display: inline-block;
+    padding: .3em .6em .3em;
+  }
+  .ed-post-meta-cat a {
+    padding: 0 6px;
+  }
+  .ed-reply-item__bd {
+    padding: 2rem;
+  }
+  .ed-reply-form__bd {
+    border-color: $border-color;
+  }
+  .ed-posts-list {
+    .has-body .ed-post-item__bd {
+      padding: 0 2rem 1rem;
+    }
+  }
+  .ed-reply-item__ft {
+    padding: 1rem 2rem;
+  }
+  .ed-mod-ask {
+    border-color: $border-color;
+    box-shadow: 0 0 7px rgba(74, 74, 174, 0.1);
+    border-radius: 0.5rem;
+  }
+  .ed-mod-ask__header, .ed-mod-ask__footer {
+    padding: 1.25rem;
+  }
+  .ed-mod-ask__content {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .ed-mod-ask__support-msg {
+    padding: 1rem;
+  }
+  .ed-cat-item .o-flag__image {
+    padding-right: 15px;
+  }
+  .ed-list__item+.ed-list__item {
+    margin-top: 1rem;
+  }
+  .ed-cat-name {
+    line-height: 1.2;
+  }
+  .ed-board-stats {
+    box-shadow: 0 0 7px rgba(74, 74, 174, 0.1);
+  }
+  .ed-board-stats__hd {
+    border-color: $border-color;
+    padding: 1rem 1.25rem;
+  }
+  .ed-board-stats__bd {
+    border-color: $border-color;
+    padding: 1.25rem;
+  }
+  .ed-post-item__post-meta {
+    flex-wrap: wrap;
+  }
+  .g-list-inline.ed-post-item__post-meta > li {
+    margin-bottom: 5px;
+  }
+  .ed-forums-cat-header {
+    background-color: $white;
+    box-shadow: 0 0 7px rgba(74, 74, 174, 0.1);
+    border: none;
+    padding: 2rem;
+  }
+  .ed-forum {
+    background-color: $white;
+    box-shadow: 0 0 7px rgba(74, 74, 174, 0.1);
+    border-radius: 4px;
+  }
+  .ed-forum__hd, .ed-forum__bd {
+    border: none;
+  }
+  .ed-forum-item {
+    border-top: 1px solid $border-color;
+    &+.ed-forum-item {
+      border-color: $border-color;
+    }
+  }
+  .ed-forum__hd, .ed-forum-item, .ed-forum__ft {
+    padding: 1.25rem 2rem;
+  }
+  .ed-forum__ft {
+    border: none;
+    border-top: 1px solid $border-color;
+  }
+  .ed-forums-cat-header {
+    .o-flag__image {
+      padding-right: 1.25rem;
+    }
+  }
+}
